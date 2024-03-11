@@ -5,12 +5,12 @@ theme: "PaperMod"
 
 params:
   homeInfoParams:
-    Title: Computers Are Cool
-    Content: This is something shows in your homepage.
+    Title: Hi, I'm Kicka.
+    Content: A Python coder and marketing specialist, sculpting innovative projects. Explore my work on GitHub and connect on social media.
 
   socialIcons: # optional
     - name: "github"
-      url: "https://github.com/XXX"
+      url: "https://github.com/kicka42"
     # - name: "youtube"
     #   url: "https://www.youtube.com/channel/XXX"
     - name: "twitter"
@@ -46,27 +46,35 @@ outputs:
 
 menu:
   main:
-    - identifier: categories
-      name: Categories
-      url: /categories/
-      weight: 10
-    - identifier: tags
-      name: Tags
-      url: /tags/
+    #- identifier: categories
+    #  name: Categories
+    #  url: /categories/
+    #  weight: 10
+    #- identifier: tags
+    #  name: Tags
+    #  url: /tags/
+    #  weight: 20
+    #- identifier: search
+    #  name: Search
+    #  url: /search/
+    #  weight: 20
+    #- identifier: archive
+    #  name: Archive
+    #  url: /archives/
+    #  weight: 20
+    - identifier: about
+      name: About
+      url: /about/
       weight: 20
-    - identifier: search
-      name: Search
-      url: /search/
-      weight: 20
-    - identifier: archive
-      name: Archive
-      url: /archives/
+    - identifier: articles
+      name: Articles
+      url: /articles/
       weight: 20
     - identifier: projects
       name: Projects
       url: /projects/
-      weight: 20
+      weight: 30
     - identifier: contact
       name: Contact
       url: /contact/
-      weight: 30
+      weight: 40
