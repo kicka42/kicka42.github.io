@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}">
-
+  <meta name="description" content="{{ .Description }}">
 <head>
     {{- partial "head.html" . }}
     {{ if .Site.Params.GoogleAnalytics }}
