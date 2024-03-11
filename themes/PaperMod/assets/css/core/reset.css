@@ -27,6 +27,8 @@ body {
     line-height: 1.6;
     word-break: break-word;
     background: var(--theme);
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 article,
