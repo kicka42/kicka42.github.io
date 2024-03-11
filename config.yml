@@ -6,7 +6,7 @@ theme: "PaperMod"
 params:
   homeInfoParams:
     Title: Hi, I'm Kicka.
-    Content: A Python coder and marketing specialist, sculpting innovative projects. Explore my work on GitHub and connect on social media.
+    Content: A Python coder, mobile apps developer and marketing specialist, sculpting innovative projects. Explore my work on GitHub and connect on social media.
 
   socialIcons: # optional
     - name: "github"
