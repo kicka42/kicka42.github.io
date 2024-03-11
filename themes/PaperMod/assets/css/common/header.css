@@ -82,7 +82,8 @@ body:not(.dark) #sun {
 }
 
 .lang-switch {
-    display: flex;
+    /*display: flex;*/
+    display:none;
     flex-wrap: inherit;
 }
 
