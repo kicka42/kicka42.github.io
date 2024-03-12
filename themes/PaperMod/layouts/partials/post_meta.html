@@ -12,6 +12,11 @@
 {{- $scratch.Add "meta" (slice .) }}
 {{- end }}
 
+{{- /* Add meta description */ -}}
+{{- with .Description -}}
+{{- $scratch.Add "meta" (slice (printf "<meta name='description' content='%s'>" .)) }}
+{{- end }}
+
 {{- with ($scratch.Get "meta") }}
 {{- delimit . "&nbsp;·&nbsp;" | safeHTML -}}
 {{- end -}}
