@@ -32,10 +32,11 @@
           {{- .Title | markdownify }}
           {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
         </h3>
+        <!--
         <div class="archive-meta">
           {{- partial "post_meta.html" . -}}
         </div>
-        <!-- Meta description display -->
+        -->
         {{- if .Description }}
         <div class="archive-entry-description">
           {{ .Description }}
