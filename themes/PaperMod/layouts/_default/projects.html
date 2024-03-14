@@ -18,9 +18,9 @@
 {{- range $pages.GroupByPublishDate "2006" }}
 {{- if ne .Key "0001" }}
 <div class="archive-year">
-
+  <div class="archive-year-header">
     {{- replace .Key "0001" "" }}
-
+  </div>
   {{- range .Pages.GroupByDate "January" }}
   <div class="archive-month">
     <!-- <h3 class="archive-month-header">{{- .Key }}</h3> -->

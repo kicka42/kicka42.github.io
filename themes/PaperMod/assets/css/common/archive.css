@@ -12,6 +12,10 @@
     border-bottom: 2px solid var(--border);
 }
 
+.archive-year-header {
+    font-size:16px;
+}
+
 .archive-month {
     display: flex;
     align-items: flex-start;
