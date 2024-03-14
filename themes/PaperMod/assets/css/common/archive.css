@@ -4,7 +4,8 @@
 }
 
 .archive-year {
-    margin-top: 40px;
+    margin-top: 30px;
+    font-size: 16px;
 }
 
 .archive-year:not(:last-of-type) {
