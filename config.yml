@@ -65,6 +65,10 @@ menu:
     - identifier: about
       name: About
       url: /about/
+      weight: 10
+    - identifier: brain
+      name: Brain
+      url: /brain/
       weight: 20
     - identifier: projects
       name: Projects
