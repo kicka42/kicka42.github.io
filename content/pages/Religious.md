@@ -3,21 +3,18 @@ areas:
 - Videos Production
 categories:
 - Projects
-- projects
+description: Instructions for making spicy tuna hand rolls. Adipisicing eiusmod nulla officia ut voluptate non aute.
 status:
 - Active
 title: Religious
 fileName: Religious
 tags:
-- video
-date: 2024-03-11
-lastMod: 2024-03-11
-summary: uis magna qui sunt deserunt nisi sint fugiat incididunt minim. Commodo adipisicing enim magna ad ea aliqua enim ad Lorem quis anim.
-description: Instructions for making spicy tuna hand rolls. Adipisicing eiusmod nulla officia ut voluptate non aute.
+date: 
+lastMod: 
 ---
 Notes
 
-  + OH MY GOD in different languages
+  + OH MY GOD in different languages V2
 
   + Take Music and slow motive from The.Boondock.Saints.1999
 
