@@ -2,7 +2,8 @@
 areas:
 - Videos Production
 categories:
-- projects
+  - Projects
+  - projects
 description: Instructions for making spicy tuna hand rolls. Adipisicing eiusmod nulla officia ut voluptate non aute.
 status:
 - Active
@@ -14,7 +15,7 @@ lastMod:
 ---
 Notes
 
-  + OH MY GOD in different languages V3
+  + OH MY GOD in different languages V4
 
   + Take Music and slow motive from The.Boondock.Saints.1999
 
