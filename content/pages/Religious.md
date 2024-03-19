@@ -3,14 +3,13 @@ areas:
 - Videos Production
 categories:
   - Projects
-  - projects
 description: Instructions for making spicy tuna hand rolls. Adipisicing eiusmod nulla officia ut voluptate non aute.
 status:
 - Active
 title: Religious
 fileName: Religious
 tags:
-date: 
+date: 2024-03-11
 lastMod: 
 ---
 Notes
