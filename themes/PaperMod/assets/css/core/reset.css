@@ -29,6 +29,8 @@ body {
     background: var(--theme);
     padding-top: 30px;
     padding-bottom: 30px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 article,
