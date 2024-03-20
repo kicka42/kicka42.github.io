@@ -11,8 +11,9 @@
 .post-description {
     margin-top: 10px;
     margin-bottom: 5px;
-    color: var(--secondary);
-    font-size: 21px;
+    /* color: var(--secondary); */
+    color: #cecdc3;
+    font-size: 18px;
 }
 
 .post-meta,
