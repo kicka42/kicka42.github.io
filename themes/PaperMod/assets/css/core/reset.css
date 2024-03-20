@@ -34,9 +34,7 @@ body {
 }
 
 article,
-aside {
-    font-weight: 500;
-}
+aside,
 figcaption,
 figure,
 footer,
