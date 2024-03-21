@@ -2,11 +2,11 @@
 categories:
 - Projects
 description: A bill management application for restaurants with meal and drink entries, service charges, discounts, and sales reports, built-in Python and Flask.
-date: 
+date: 2023-11-11
 status:
 - Active
 title: billwise
-fileName: billwise
+fileName: Billwise
 tags:
 lastMod: 
 ---
