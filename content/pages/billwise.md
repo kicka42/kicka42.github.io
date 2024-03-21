@@ -1,7 +1,6 @@
 ---
 categories:
 - Projects
-- Projects
 description: A bill management application for restaurants with meal and drink entries, service charges, discounts, and sales reports, built-in Python and Flask.
 date: 
 status:
@@ -9,7 +8,6 @@ status:
 title: billwise
 fileName: billwise
 tags:
-- 
 lastMod: 
 ---
 BillWise is an [open source](https://github.com/kicka42/bill-management-system) bill management application for restaurants with meal and drink entries, service charges, discounts, and sales reports, built-in Python and Flask.

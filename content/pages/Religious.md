@@ -7,7 +7,7 @@ description: Instructions for making spicy tuna hand rolls. Adipisicing eiusmod 
 date: 2024-03-11
 status:
   - Active
-title: Projects/Religious
+title: Religious
 tags:
 lastMod: 2024-03-19
 ---
