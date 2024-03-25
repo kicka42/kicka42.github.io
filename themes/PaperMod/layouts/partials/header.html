@@ -58,8 +58,11 @@
             {{- $page_url:= $currentPage.Permalink | absLangURL }}
             {{- $is_search := eq ($.Site.GetPage .KeyName).Layout `search` }}
             <li>
+                <!--
                 <a href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}"
                 {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }}>
+                -->
+                <a href="{{ .URL | absLangURL }}" {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }}>
                 <span {{- if eq $menu_item_url $page_url }} class="active" {{- end }}>
                         {{- .Pre }}
                         {{- .Name }}
@@ -72,7 +75,10 @@
             {{- /* Logo switches inserted here, after menu items */}}
             <li class="logo-switches">
                 {{- if (not .Site.Params.disableThemeToggle) }}
+                <button id="theme-toggle">
+                <!--
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                -->
                     <!-- Moon icon, now using Sun's SVG -->
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
