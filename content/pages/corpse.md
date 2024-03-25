@@ -6,7 +6,7 @@ date: 2021-11-11
 status:
 - Active
 title: Corpse
-fileName: Corpse
+fileName: corpse
 tags:
 lastMod: 
 ---

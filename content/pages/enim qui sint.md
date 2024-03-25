@@ -2,9 +2,7 @@
 tags:
 - Creativity
 - Q/How To Create Things?
-- tag
-title: snowden
-fileName: snowden
+title: Enim qui sint
 categories:
 - category
 date: 
