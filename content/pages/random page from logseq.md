@@ -8,7 +8,7 @@ category: logseq
 title: Laborum excepteur
 ShowToc: true
 categories: logseq
-date: 2022-04-20
+date: 2019-04-20
 lastMod: 2022-04-20
 description: Instructions for making spicy tuna hand rolls. Adipisicing eiusmod nulla officia ut voluptate non aute.
 ---
