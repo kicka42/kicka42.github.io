@@ -65,3 +65,13 @@
     padding: var(--gap);
     border-radius: var(--radius);
 }
+
+.home-footer-image-text {
+    color: var(--secondary);
+    font-size: 14px;
+    line-height: 1.6;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
