@@ -58,3 +58,10 @@
 #theme-toggle:focus {
     outline: 0;
 }
+
+.home-footer-image {
+    position: relative;
+    margin-bottom: var(--gap);
+    padding: var(--gap);
+    border-radius: var(--radius);
+}
