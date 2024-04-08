@@ -63,6 +63,7 @@
     position: relative;
     margin-bottom: var(--gap);
     padding: var(--gap);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
 }
 
