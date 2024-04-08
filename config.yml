@@ -8,6 +8,7 @@ params:
     Title: Hi, I'm Kicka.
     Content: A Python coder, mobile apps developer and marketing specialist, sculpting innovative projects. Explore my work on GitHub and connect on social media.
 
+  homeImage: "content/assets/egon-schiele_self-portrait-with-raised-arms_1914.jpg"
   socialIcons: # optional
     - name: "github"
       url: "https://github.com/kicka42"
@@ -66,9 +67,9 @@ menu:
       name: About
       url: /about/
       weight: 10
-    - identifier: brain
-      name: Brain
-      url: /brain/
+    - identifier: notes
+      name: Notes
+      url: /notes/
       weight: 20
     - identifier: projects
       name: Projects
