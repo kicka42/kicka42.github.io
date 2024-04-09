@@ -1,4 +1,5 @@
-baseURL: https://kicka42.github.io
+# baseURL: https://kicka42.github.io
+baseURL: https://kicka.org
 languageCode: en-us
 title: Kicka
 theme: "PaperMod"
