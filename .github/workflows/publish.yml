@@ -3,30 +3,30 @@ name: github pages
 on:
   push:
     branches:
-      - main # Set a branch to deploy
-  pull_request:
-  workflow_dispatch:
+      - main # Triggers the workflow on push events to the main branch
+  pull_request: # Triggers the workflow on pull requests
+  workflow_dispatch: # Allows manual triggering of the workflow
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-20.04 # Specifies the runner environment
     steps:
-      - uses: actions/checkout@v3 # Update this to the latest version supporting Node.js 20
+      - uses: actions/checkout@v3 # Checks out your repository under $GITHUB_WORKSPACE
         with:
-          submodules: true
-          fetch-depth: 0
+          submodules: true # Fetches repository submodules
+          fetch-depth: 0 # Fetches all history for all tags and branches
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2 # Update to the latest version supporting Node.js 20
+        uses: peaceiris/actions-hugo@v2 # This action sets up Hugo
         with:
-          hugo-version: 'latest'
+          hugo-version: 'latest' # Use the latest Hugo version
 
       - name: Build
-        run: hugo --minify
+        run: hugo --minify # Builds your site with Hugo
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3 # Update to the latest version supporting Node.js 20
-        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3 # This action deploys your site to GitHub Pages
+        if: github.ref == 'refs/heads/main' # Ensures deployment occurs only on the main branch
         with:
-          github_token: ${{ secrets.LOGSEQ_GITHUB_TOKEN }}
-          publish_dir: ./public
+          github_token: ${{ secrets.GITHUB_TOKEN }} # Utilizes a GitHub token for authentication
+          publish_dir: ./public # Specifies the directory to publish
