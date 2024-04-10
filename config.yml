@@ -12,14 +12,14 @@ params:
 
   homeImage: "content/assets/egon-schiele_self-portrait-with-raised-arms_1914.jpg"
   socialIcons: # optional
+    - name: "linkedin"
+      url: "https://www.linkedin.com/in/kicka/"
     - name: "github"
       url: "https://github.com/kicka42"
     # - name: "youtube"
     #   url: "https://www.youtube.com/channel/XXX"
     # - name: "twitter"
     #  url: "https://twitter.com/XXX"
-    - name: "linkedin"
-      url: "https://www.linkedin.com/in/kicka/"
     # - name: "kofi"
     #   url: "https://buymeacoffee.com/XXX"
     # - name: "rss"

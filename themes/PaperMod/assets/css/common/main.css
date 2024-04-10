@@ -29,6 +29,7 @@
 
 .social-icons {
     padding: 12px 0;
+    font-size: 16px;
 }
 
 .social-icons a:not(:last-of-type) {
