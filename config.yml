@@ -7,7 +7,8 @@ theme: "PaperMod"
 params:
   homeInfoParams:
     Title: Hi, I'm Kicka.
-    Content: A Python coder, mobile apps developer and marketing specialist, sculpting innovative projects. Explore my work on GitHub and connect on social media.
+    Content: A Python coder, data scientist and AI developer, sculpting innovative projects. My long-term goal is to grow professionally and take on new challenges all the time. I value continuous learning and working with highly motivated people. Besides, I'm keen on reading books, playing guitar, meeting new people & travelling around the world.
+
 
   homeImage: "content/assets/egon-schiele_self-portrait-with-raised-arms_1914.jpg"
   socialIcons: # optional
@@ -17,11 +18,13 @@ params:
     #   url: "https://www.youtube.com/channel/XXX"
     - name: "twitter"
       url: "https://twitter.com/XXX"
+    - name: "linkedin"
+      url: "https://www.linkedin.com/in/XXX"
     # - name: "kofi"
     #   url: "https://buymeacoffee.com/XXX"
     # - name: "rss"
     #   url: "https://XXX.github.io/index.xml"
-  ShowReadingTime: true
+  ShowReadingTime: false
   author: "Kicka"
   contact: "kicka@example.com"
   feedlinks: true
