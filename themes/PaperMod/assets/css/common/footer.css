@@ -62,7 +62,6 @@
 .home-footer-image {
     position: relative;
     margin-bottom: var(--gap);
-    padding: var(--gap);
 }
 
 .home-footer-image-text {
