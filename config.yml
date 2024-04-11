@@ -13,8 +13,6 @@ params:
       I'm big on learning the ropes and teaming up with folks who are just as driven. <br />
       Besides, I'm keen on reading books, strumming my guitar, or jet-setting to someplace new. <br />
 
-
-  homeImage: "content/assets/egon-schiele_self-portrait-with-raised-arms_1914.jpg"
   socialIcons: # optional
     - name: "linkedin"
       url: "https://www.linkedin.com/in/kicka/"
