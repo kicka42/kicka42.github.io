@@ -8,10 +8,10 @@ params:
   homeInfoParams:
     Title: Hi, I'm Kicka
     Content: | 
-      A Python coder, data scientist, and AI developer, constantly crafting projects.
-      I'm all about leveling up professionally and diving into new challenges head-on.
-      I'm big on learning the ropes and teaming up with folks who are just as driven.
-      Besides, I'm keen on reading books, strumming my guitar, or jet-setting to someplace new.
+      A Python coder, data scientist, and AI developer, constantly crafting projects. <br />
+      I'm all about leveling up professionally and diving into new challenges head-on. <br />
+      I'm big on learning the ropes and teaming up with folks who are just as driven. <br />
+      Besides, I'm keen on reading books, strumming my guitar, or jet-setting to someplace new. <br />
 
 
   homeImage: "content/assets/egon-schiele_self-portrait-with-raised-arms_1914.jpg"
