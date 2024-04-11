@@ -7,7 +7,11 @@ theme: "PaperMod"
 params:
   homeInfoParams:
     Title: Hi, I'm Kicka.
-    Content: A Python coder, data scientist and AI developer, sculpting innovative projects. My long-term goal is to grow professionally and take on new challenges all the time. I value continuous learning and working with highly motivated people. Besides, I'm keen on reading books, playing guitar, meeting new people & travelling around the world.
+    Content: |
+      A Python coder, data scientist, and AI developer, constantly crafting projects.
+      I'm all about leveling up professionally and diving into new challenges head-on.
+      I'm big on learning the ropes and teaming up with folks who are just as driven.
+      Besides, I'm keen on reading books, strumming my guitar, or jet-setting to someplace new.
 
 
   homeImage: "content/assets/egon-schiele_self-portrait-with-raised-arms_1914.jpg"
