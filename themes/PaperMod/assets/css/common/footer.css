@@ -60,6 +60,7 @@
 }
 
 .home-footer-image {
+    border-radius: 10px;
     position: relative;
     margin-bottom: var(--gap);
 }
