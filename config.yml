@@ -7,7 +7,7 @@ theme: "PaperMod"
 params:
   homeInfoParams:
     Title: Hi, I'm Kicka.
-    Content: |
+    Content: | 
       A Python coder, data scientist, and AI developer, constantly crafting projects.
       I'm all about leveling up professionally and diving into new challenges head-on.
       I'm big on learning the ropes and teaming up with folks who are just as driven.
