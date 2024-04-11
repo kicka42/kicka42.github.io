@@ -64,7 +64,7 @@
     margin-bottom: var(--gap);
 }
 
-.home-footer-image-text {
+.home-footer-text {
     text-align: left;
     color: var(--secondary);
     font-size: 16px;
