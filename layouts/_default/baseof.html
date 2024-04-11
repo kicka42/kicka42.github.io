@@ -17,6 +17,10 @@
 {{- end -}}
 " id="top">
     {{- partialCached "header.html" . .Page -}}
+    <!-- Content insertion with entry-content class -->
+    <div class="entry-content">
+        {{ .Site.Params.homeInfoParams.Content | markdownify }}
+    </div>
     <main class="main">
         {{- block "main" . }}{{ end }}
     </main>
