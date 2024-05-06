@@ -1,19 +1,19 @@
 ---
 categories:
 - Projects
-description: A bill management application for restaurants with meal and drink entries, service charges, discounts, and sales reports, built-in Python and Flask.
-date: 2023-11-11
+description: An intuitive workout tracker & planner built with Flutter for iOS and Android.
+date: 2024-02-03
 status:
 - Active
-title: Billwise
-fileName: billwise
+title: UP
+fileName: up
 tags:
-  - Python
-  - Flask
-  - Pandas
+  - Dart
+  - Flutter
+  - FlutterFlow
 lastMod: 
 ---
-UP is a free, intuitive, and user-friendly workout tracking app designed to take your fitness journey to new heights. Available on both iOS and Android, UP is crafted to enhance the effectiveness of your exercise routines with simplicity and power.
+UP is a intuitive, and user-friendly workout tracking app designed to take your fitness journey to new heights. Available on both iOS and Android, UP is crafted to enhance the effectiveness of your exercise routines with simplicity and power.
 
 Key Features:
 - Workout Tracking & Planning: Easily build routines, track progress, and monitor gains with friends.
