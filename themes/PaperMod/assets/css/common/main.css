@@ -45,9 +45,9 @@
 */
 .social-icons {
     padding: 12px 0;
-    font-size: 16px;
+    font-size: 14px; /* Reduced from 16px */
     display: flex;
-    gap: 12px;
+    gap: 10px; /* Reduced gap between icons */
 }
 
 .social-icons a {
@@ -57,18 +57,18 @@
     color: inherit;
     background-color: #333;
     border-radius: 6px;
-    padding: 8px 16px;
-    gap: 8px;
+    padding: 6px 12px; /* Adjusted padding to make buttons smaller */
+    gap: 6px; /* Reduced gap between icon and text */
 }
 
 .social-icons a svg {
-    height: 26px;
-    width: 26px;
+    height: 22px; /* Reduced from 26px */
+    width: 22px; /* Reduced from 26px */
     vertical-align: middle;
 }
 
 .social-icons a span {
-    font-size: 16px;
+    font-size: 14px; /* Reduced from 16px */
     font-weight: 500;
     color: white;
 }
