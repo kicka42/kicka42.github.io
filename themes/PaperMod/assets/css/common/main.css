@@ -27,11 +27,12 @@
 .pagination .next {
     margin-inline-start: auto;
 }
-
+/*
 .social-icons {
     padding: 12px 0;
     font-size: 16px;
 }
+
 
 .social-icons a:not(:last-of-type) {
     margin-inline-end: 12px;
@@ -40,6 +41,26 @@
 .social-icons a svg {
     height: 26px;
     width: 26px;
+}
+*/
+.social-icons {
+    padding: 12px 0;
+    font-size: 16px;
+    display: flex;
+    gap: 12px;
+}
+
+.social-icons {
+    padding: 12px 0;
+    font-size: 16px;
+    display: flex;
+    gap: 12px;
+}
+
+.social-icons .icon {
+    height: 26px;
+    width: 26px;
+    vertical-align: middle;
 }
 
 code {

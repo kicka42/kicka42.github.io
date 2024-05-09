@@ -1,5 +1,5 @@
 ---
-public: true
+public: false
 format: article
 tags:
   - tag1

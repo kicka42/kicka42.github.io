@@ -1,3 +1,4 @@
+<!--
 <div class="social-icons">
     {{- range . }}
         <a href="{{ trim .url " " }}" target="_blank" rel="noopener noreferrer me" title="{{ .name | title }}">
@@ -9,6 +10,15 @@
         </a>
     {{- end }}
 </div>
+-->
+<div class="social-icons">
+    {{- range . }}
+    <a href="{{ trim .url " " }}" target="_blank" rel="noopener noreferrer me" title="{{ .name | title }}">
+    {{ partial "svg.html" . }}
+    </a>
+    {{- end }}
+</div>
+
 
 <!--
 <div class="social-icons">

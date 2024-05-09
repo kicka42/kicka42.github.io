@@ -1,0 +1,7 @@
+{{ if eq .name "linkedin" }}
+<img src="/images/linkedin.svg" alt="LinkedIn Logo" class="icon" />
+{{ else if eq .name "github" }}
+<img src="/images/github.svg" alt="GitHub Logo" class="icon" />
+{{ else }}
+<!-- Add SVG content for other socials here or retain existing logic -->
+{{ end }}
