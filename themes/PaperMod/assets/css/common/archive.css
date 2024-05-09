@@ -9,7 +9,7 @@
 }
 
 .archive-year:not(:last-of-type) {
-    border-bottom: 2px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
 .archive-year-header {
@@ -35,12 +35,12 @@
 .archive-entry {
     position: relative;
     /*padding: 5px;*/
-    margin: 10px 0;
+    /*margin: 10px 0;*/
 }
 
 .archive-entry-title {
     font-size: 16px;
-    margin: 5px 0;
+    /*margin: 5px 0;*/
     font-weight: 400;
 }
 
