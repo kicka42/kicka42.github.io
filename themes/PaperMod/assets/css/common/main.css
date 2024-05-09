@@ -50,17 +50,27 @@
     gap: 12px;
 }
 
-.social-icons {
-    padding: 12px 0;
-    font-size: 16px;
+.social-icons a {
     display: flex;
-    gap: 12px;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    background-color: #333;
+    border-radius: 6px;
+    padding: 8px 16px;
+    gap: 8px;
 }
 
-.social-icons .icon {
+.social-icons a svg {
     height: 26px;
     width: 26px;
     vertical-align: middle;
+}
+
+.social-icons a span {
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
 }
 
 code {
