@@ -24,10 +24,9 @@ jobs:
           node-version: '20'
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: actions/setup-hugo@v1
         with:
           hugo-version: 'latest'
-          extended: true
 
       - name: Build
         run: hugo --minify
