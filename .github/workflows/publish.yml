@@ -3,10 +3,10 @@ name: github pages
 on:
   push:
     branches:
-      - main # Triggers the workflow on push events to the main branch
+      - main
   pull_request:
     branches:
-      - main # Ensures the workflow is also triggered on pull requests to the main branch
+      - main
   workflow_dispatch:
 
 jobs:
@@ -22,6 +22,7 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
+          node-version: '20'  # Specify Node.js version explicitly
 
       - name: Build
         run: hugo --minify
@@ -35,4 +36,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          keep_files: true # Keeps files that are already in the gh-pages branch
+          keep_files: true
