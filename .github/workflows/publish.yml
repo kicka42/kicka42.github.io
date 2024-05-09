@@ -23,11 +23,10 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2.6.0
-        with:
-          hugo-version: 'latest'
-          extended: true
+      - name: Install Hugo
+        run: |
+          curl -L https://github.com/gohugoio/hugo/releases/download/v0.111.3/hugo_extended_0.111.3_linux-amd64.deb -o hugo.deb
+          sudo dpkg -i hugo.deb
 
       - name: Build
         run: hugo --minify
