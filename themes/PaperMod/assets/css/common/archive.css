@@ -14,7 +14,7 @@
 
 .archive-year-header {
     font-size:16px;
-    color: #878580;
+    color: var(--secondary);
 }
 
 .archive-month {
