@@ -5,6 +5,12 @@ title: Kicka
 theme: "PaperMod"
 
 params:
+  assets:
+    favicon: "avatar1.png"
+    favicon16x16: "avatar1.png"
+    favicon32x32: "avatar1.png"
+    apple_touch_icon: "avatar1.png"
+    safari_pinned_tab: "avatar1.png"
   homeInfoParams:
     Title: Hi, I'm Kicka
     Content: | 
