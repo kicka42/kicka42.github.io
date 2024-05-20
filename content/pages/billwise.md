@@ -5,7 +5,7 @@ description: A bill management application for restaurants with meal and drink e
 date: 2023-11-11
 status:
 - Active
-title: Billwise
+title: Billy
 fileName: billwise
 tags:
   - Python
