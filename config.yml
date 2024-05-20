@@ -13,9 +13,9 @@ params:
     safari_pinned_tab: "avatar1.png"
   homeInfoParams:
     Title: Hi, I'm Kicka
-    Content: | 
-      A Python coder, data scientist, and AI developer, crafting projects. <br />
-      Besides, I'm keen on reading books, watching movies, playing guitar and jet-setting to someplace new. <br />
+    Content: |
+      I love creating apps and working on AI projects. <br />
+      Besides, I'm also really into books, movies, playing the guitar, and going on adventures. <br />
 
   socialIcons: # optional
     - name: "linkedin"
