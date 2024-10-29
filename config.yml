@@ -12,7 +12,7 @@ params:
     apple_touch_icon: "avatar1.png"
     safari_pinned_tab: "avatar1.png"
   homeInfoParams:
-    Title: Hello
+    Title: Hi
     Content: |
 
   socialIcons: # optional
