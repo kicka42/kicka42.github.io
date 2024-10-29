@@ -12,10 +12,8 @@ params:
     apple_touch_icon: "avatar1.png"
     safari_pinned_tab: "avatar1.png"
   homeInfoParams:
-    Title: Hi, I'm Kicka
+    Title: Hello
     Content: |
-      I love creating apps and working on AI projects. <br />
-      Besides, I'm also really into books, movies, playing the guitar, and going on adventures. <br />
 
   socialIcons: # optional
     - name: "linkedin"

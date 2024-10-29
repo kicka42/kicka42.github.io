@@ -1,6 +1,6 @@
 ---
-title: "About"
-layout: "about"
-url: "/about/"
-summary: about
+title: "Contact"
+layout: "contact"
+url: "/contact/"
+summary: contact
 ---
