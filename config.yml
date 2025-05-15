@@ -75,10 +75,10 @@ menu:
       name: Posts
       url: https://kicka.substack.com
       weight: 10
-    - identifier: projects
-      name: Projects
-      url: /projects/
-      weight: 20
+    #- identifier: projects
+    #  name: Projects
+    #  url: /projects/
+    #  weight: 20
     - identifier: principles
       name: Principles
       url: /principles/
