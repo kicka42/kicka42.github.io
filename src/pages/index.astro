@@ -1,16 +1,30 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Kicka">
+	<h1>Hi,</h1>
+	<p>
+		I'm a passionate creator, exploring the world of web development and design. 
+		I love building beautiful and functional websites and applications.
+	</p>
+	<p>
+		This is my personal space on the internet where I share my <a href="/projects">projects</a>, 
+		document my <a href="/workflows">workflows</a>, and write down my <a href="/notes">notes</a>.
+	</p>
+	<p>
+		Feel free to look around and <a href="/contact">get in touch</a> if you'd like to collaborate.
+	</p>
+
+	<div class="grid grid-columns gap1 mn2">
+		<a href="/projects/featured-project" class="backlink plain">
+			<p>Here's a project I'm particularly proud of. It showcases my skills in...</p>
+			<p>Learn more</p>
+		</a>
+		<a href="/notes/latest-note" class="backlink plain">
+			<p>A recent thought or discovery I've written about.</p>
+			<p>Read now</p>
+		</a>
+	</div>
+
+</Layout>

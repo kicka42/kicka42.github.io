@@ -1,0 +1,53 @@
+---
+import '../styles/flexoki.css';
+
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Kicka's portfolio" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<script>
+			if (
+				localStorage.theme === 'dark' ||
+				(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+			) {
+				document.querySelector('body').classList.add('theme-dark');
+			}
+		</script>
+		<div class="wrap">
+			<nav class="flex align-center font-ui">
+				<span class="flex-grow">
+					<a href="/" class="avatar plain">
+						<img
+							src="/avatar.png"
+							alt="Kicka's avatar"
+							style="width: 48px; height: 48px; border-radius: 50%; vertical-align: middle;"
+						/>
+					</a>
+				</span>
+				<span class="flex-shrink">
+					<a href="/projects" class="muted plain ssl">Projects</a>
+					<a href="/workflows" class="muted plain ssl">Workflows</a>
+					<a href="/notes" class="muted plain ssl">Notes</a>
+					<a href="/contact" class="muted plain ssl">Contact</a>
+				</span>
+			</nav>
+			<main>
+				<slot />
+			</main>
+		</div>
+	</body>
+</html> 
