@@ -163,6 +163,63 @@ template {
   --input-width: 20em;
   --image-radius: 6px;
   --line-height: 1.5;
+  --text: var(--flexoki-black);
+  --text-rgb: var(--flexoki-black-rgb);
+  --bg: var(--flexoki-paper);
+  --bg-rgb: var(--flexoki-paper-rgb);
+  --bg-2: var(--flexoki-50);
+  --bg-3: var(--flexoki-100);
+  --ui: var(--flexoki-150);
+  --ui-2: var(--flexoki-200);
+  --ui-3: var(--flexoki-300);
+  --tx: var(--flexoki-700);
+  --tx-2: var(--flexoki-600);
+  --tx-3: var(--flexoki-500);
+  --tx-4: var(--flexoki-400);
+  --link: var(--flexoki-blue-600);
+  --link-rgb: var(--flexoki-blue-600-rgb);
+  --link-v: var(--flexoki-purple-500);
+  --link-v-rgb: var(--flexoki-purple-500-rgb);
+  --hl: var(--flexoki-blue-150);
+  --hl-rgb: var(--flexoki-blue-150-rgb);
+  --hl-2: var(--flexoki-yellow-300);
+  --hl-2-rgb: var(--flexoki-yellow-300-rgb);
+  --re: var(--flexoki-red-500);
+  --re-rgb: var(--flexoki-red-500-rgb);
+  --or: var(--flexoki-orange-500);
+  --or-rgb: var(--flexoki-orange-500-rgb);
+  --ye: var(--flexoki-yellow-500);
+  --ye-rgb: var(--flexoki-yellow-500-rgb);
+  --gr: var(--flexoki-green-600);
+  --gr-rgb: var(--flexoki-green-600-rgb);
+  --cy: var(--flexoki-cyan-600);
+  --cy-rgb: var(--flexoki-cyan-600-rgb);
+  --bl: var(--flexoki-blue-600);
+  --bl-rgb: var(--flexoki-blue-600-rgb);
+  --pu: var(--flexoki-purple-600);
+  --pu-rgb: var(--flexoki-purple-600-rgb);
+  --ma: var(--flexoki-magenta-600);
+  --ma-rgb: var(--flexoki-magenta-600-rgb);
+  --er: var(--re);
+  --flexoki-blue-100: #e6e4d9;
+  --flexoki-blue-100-rgb: 230, 228, 217;
+  --flexoki-blue-150: #dad8ce;
+  --flexoki-blue-150-rgb: 218, 216, 206;
+  --flexoki-blue-200: #cecdc3;
+  --flexoki-blue-200-rgb: 206, 205, 195;
+  --flexoki-blue-300: #569dff;
+  --flexoki-blue-800: #153d7a;
+  --flexoki-blue-800-rgb: 21, 61, 122;
+  --flexoki-blue-850: #123363;
+  --flexoki-blue-850-rgb: 18, 51, 99;
+  --flexoki-blue-900: #10294d;
+  --flexoki-blue-900-rgb: 16, 41, 77;
+  --flexoki-blue-950: #0f1e33;
+  --flexoki-blue-950-rgb: 15, 30, 51;
+  --flexoki-purple-300: var(--link-v);
+  --flexoki-purple-300-rgb: var(--link-v-rgb);
+  --flexoki-yellow-900: var(--hl-2);
+  --flexoki-yellow-900-rgb: var(--hl-2-rgb);
 }
 @media (max-width: 860px) {
   :root {
@@ -170,6 +227,7 @@ template {
     --wrap-wide: 100vw;
     --input-width: 100%;
     --heading-weight: 600;
+    --image-radius: 0;
   }
   :root .wide,
   :root .wider {
@@ -367,6 +425,12 @@ template {
   --color-pu-hover: var(--flexoki-purple-600);
   --color-ma: var(--flexoki-magenta-400);
   --color-ma-hover: var(--flexoki-magenta-600);
+  --link-v: var(--flexoki-purple-300);
+  --link-v-rgb: var(--flexoki-purple-300-rgb);
+  --hl: var(--flexoki-blue-850);
+  --hl-rgb: var(--flexoki-blue-850-rgb);
+  --hl-2: var(--flexoki-yellow-900);
+  --hl-2-rgb: var(--flexoki-yellow-900-rgb);
 }
 .bg {
   background-color: var(--color-bg-primary);
