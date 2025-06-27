@@ -16,6 +16,14 @@ import Layout from '../layouts/Layout.astro';
 		Feel free to look around and <a href="/contact">get in touch</a> if you'd like to collaborate.
 	</p>
 
+	<div class="art-section mn2">
+		<img src="/eg.png" alt="Egon Schiele Self-Portrait with Raised Arms, 1914" class="art-image">
+		<p class="art-caption muted">
+			I love Egon Schiele's raw, expressive art. Like his fearless self-portraits, 
+			this space is my own form of creative expression.
+		</p>
+	</div>
+
 	<div class="grid grid-columns gap1 mn2">
 		<a href="/projects/featured-project" class="backlink plain">
 			<p>Here's a project I'm particularly proud of. It showcases my skills in...</p>
@@ -28,3 +36,34 @@ import Layout from '../layouts/Layout.astro';
 	</div>
 
 </Layout>
+
+<style>
+	.art-section {
+		text-align: center;
+		margin: 2rem 0;
+	}
+	
+	.art-image {
+		width: 100%;
+		height: auto;
+		border-radius: 1px;
+		margin-bottom: 1rem;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	}
+	
+	.art-caption {
+		margin: 0 auto;
+		font-style: italic;
+		line-height: 1.6;
+	}
+	
+	@media (max-width: 600px) {
+		.art-image {
+			max-width: 400px;
+		}
+		
+		.art-caption {
+			font-size: var(--font-small);
+		}
+	}
+</style>
