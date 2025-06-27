@@ -35,6 +35,10 @@ import Layout from '../layouts/Layout.astro';
 		</a>
 	</div>
 
+	<div class="signature-section">
+		<img src="/sign.png" alt="Signature" class="signature-image">
+	</div>
+
 </Layout>
 
 <style>
@@ -64,6 +68,23 @@ import Layout from '../layouts/Layout.astro';
 		
 		.art-caption {
 			font-size: var(--font-small);
+		}
+	}
+	
+	.signature-section {
+		text-align: center;
+		margin: 3rem 0 2rem 0;
+	}
+	
+	.signature-image {
+		max-width: 80px;
+		height: auto;
+		filter: opacity(0.8);
+	}
+	
+	@media (max-width: 600px) {
+		.signature-image {
+			max-width: 60px;
 		}
 	}
 </style>

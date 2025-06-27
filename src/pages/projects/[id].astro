@@ -1,0 +1,341 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { projects } from '../../projects-data.js';
+
+// This function runs at build time to generate static paths
+export async function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { id: project.id }
+  }));
+}
+
+const { id } = Astro.params;
+const project = projects.find(p => p.id === id);
+
+if (!project) {
+  return Astro.redirect('/projects');
+}
+---
+
+<Layout title={project.title}>
+  <div class="project-page">
+    <!-- Back navigation -->
+    <nav class="back-nav">
+      <a href="/projects" class="back-link">
+        ← Back to Projects
+      </a>
+    </nav>
+
+    <!-- Project header -->
+    <header class="project-header">
+      <div class="project-image-large">
+        <img 
+          src={project.image} 
+          alt={`${project.title} cover image`}
+        />
+      </div>
+      <div class="project-info">
+        <div class="project-meta">
+          <span class="project-year">{project.year}</span>
+        </div>
+        <h1 class="project-title">{project.title}</h1>
+        <p class="project-summary">{project.description}</p>
+        
+        <!-- Technologies -->
+        <div class="technologies">
+          <h3>Technologies Used</h3>
+          <div class="tech-tags">
+            {project.technologies.map(tech => (
+              <span class="tech-tag">{tech}</span>
+            ))}
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class="project-links">
+          {project.github && (
+            <a href={project.github} class="project-btn" target="_blank" rel="noopener noreferrer">
+              View Code
+            </a>
+          )}
+          {project.demo && (
+            <a href={project.demo} class="project-btn project-btn-primary" target="_blank" rel="noopener noreferrer">
+              Live Demo
+            </a>
+          )}
+        </div>
+      </div>
+    </header>
+
+    <!-- Project content -->
+    <main class="project-content">
+      <section class="project-description">
+        <h2>About This Project</h2>
+        <div class="description-text">
+          {project.fullDescription.split('\n').map(paragraph => (
+            paragraph.trim() && <p>{paragraph}</p>
+          ))}
+        </div>
+      </section>
+    </main>
+  </div>
+</Layout>
+
+<style>
+  .project-page {
+    max-width: var(--wrap-wide);
+    margin: 0 auto;
+  }
+
+  .back-nav {
+    margin-bottom: 2rem;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--flexoki-600);
+    text-decoration: none;
+    font-size: var(--font-smaller);
+    transition: color 0.2s ease;
+  }
+
+  .back-link:hover {
+    color: var(--flexoki-800);
+  }
+
+  .theme-dark .back-link {
+    color: var(--flexoki-300);
+  }
+
+  .theme-dark .back-link:hover {
+    color: var(--flexoki-100);
+  }
+
+  .project-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    align-items: start;
+  }
+
+  .project-image-large {
+    position: sticky;
+    top: 2rem;
+  }
+
+  .project-image-large img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: var(--image-radius);
+    box-shadow: 0 4px 12px rgba(var(--flexoki-200-rgb), 0.3);
+  }
+
+  .theme-dark .project-image-large img {
+    box-shadow: 0 4px 12px rgba(var(--flexoki-black-rgb), 0.4);
+  }
+
+  .project-info {
+    padding: 1rem 0;
+  }
+
+  .project-meta {
+    margin-bottom: 1rem;
+  }
+
+  .project-year {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--flexoki-100);
+    color: var(--flexoki-600);
+    border-radius: var(--border-radius);
+    font-size: var(--font-smaller);
+    font-weight: 500;
+  }
+
+  .theme-dark .project-year {
+    background: var(--flexoki-850);
+    color: var(--flexoki-300);
+  }
+
+  .project-title {
+    font-size: 2.5rem;
+    font-weight: var(--heading-weight);
+    margin-bottom: 1rem;
+    color: var(--flexoki-800);
+  }
+
+  .theme-dark .project-title {
+    color: var(--flexoki-100);
+  }
+
+  .project-summary {
+    font-size: 1.1rem;
+    line-height: var(--line-height);
+    color: var(--flexoki-600);
+    margin-bottom: 2rem;
+  }
+
+  .theme-dark .project-summary {
+    color: var(--flexoki-300);
+  }
+
+  .technologies {
+    margin-bottom: 2rem;
+  }
+
+  .technologies h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--flexoki-700);
+  }
+
+  .theme-dark .technologies h3 {
+    color: var(--flexoki-200);
+  }
+
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tech-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--flexoki-50);
+    color: var(--flexoki-700);
+    border: 1px solid var(--flexoki-200);
+    border-radius: var(--border-radius);
+    font-size: var(--font-smaller);
+  }
+
+  .theme-dark .tech-tag {
+    background: var(--flexoki-900);
+    color: var(--flexoki-200);
+    border-color: var(--flexoki-700);
+  }
+
+  .project-links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .project-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--flexoki-300);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    color: var(--flexoki-700);
+    background: var(--flexoki-paper);
+    transition: all 0.2s ease;
+    font-weight: 500;
+  }
+
+  .project-btn:hover {
+    background: var(--flexoki-50);
+    border-color: var(--flexoki-400);
+  }
+
+  .project-btn-primary {
+    background: var(--flexoki-600);
+    color: var(--flexoki-paper);
+    border-color: var(--flexoki-600);
+  }
+
+  .project-btn-primary:hover {
+    background: var(--flexoki-700);
+    border-color: var(--flexoki-700);
+  }
+
+  .theme-dark .project-btn {
+    background: var(--flexoki-850);
+    color: var(--flexoki-200);
+    border-color: var(--flexoki-700);
+  }
+
+  .theme-dark .project-btn:hover {
+    background: var(--flexoki-800);
+    border-color: var(--flexoki-600);
+  }
+
+  .theme-dark .project-btn-primary {
+    background: var(--flexoki-300);
+    color: var(--flexoki-950);
+    border-color: var(--flexoki-300);
+  }
+
+  .theme-dark .project-btn-primary:hover {
+    background: var(--flexoki-200);
+    border-color: var(--flexoki-200);
+  }
+
+  .project-content {
+    border-top: 1px solid var(--flexoki-200);
+    padding-top: 3rem;
+  }
+
+  .theme-dark .project-content {
+    border-color: var(--flexoki-700);
+  }
+
+  .project-description h2 {
+    font-size: 1.5rem;
+    font-weight: var(--heading-weight);
+    margin-bottom: 1.5rem;
+    color: var(--flexoki-800);
+  }
+
+  .theme-dark .project-description h2 {
+    color: var(--flexoki-100);
+  }
+
+  .description-text {
+    line-height: var(--line-height);
+    color: var(--flexoki-600);
+  }
+
+  .theme-dark .description-text {
+    color: var(--flexoki-300);
+  }
+
+  .description-text p {
+    margin-bottom: 1rem;
+  }
+
+  .description-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .project-header {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .project-image-large {
+      position: static;
+    }
+
+    .project-image-large img {
+      height: 200px;
+    }
+
+    .project-title {
+      font-size: 2rem;
+    }
+
+    .project-links {
+      flex-direction: column;
+    }
+
+    .project-btn {
+      text-align: center;
+    }
+  }
+</style> 

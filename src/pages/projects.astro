@@ -1,8 +1,160 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { projects } from '../projects-data.js';
+
+// Get the query parameter to determine if we should show all projects
+const url = new URL(Astro.request.url);
+const showAll = url.searchParams.get('view') === 'all';
+
+// Filter projects based on visibility settings
+const visibleProjects = showAll ? projects : projects.filter(project => project.visible);
+
+// Group projects by year (descending order)
+const projectsByYear = visibleProjects.reduce((acc, project) => {
+  if (!acc[project.year]) {
+    acc[project.year] = [];
+  }
+  acc[project.year].push(project);
+  return acc;
+}, {} as Record<number, typeof projects>);
+
+// Sort years in descending order
+const sortedYears = Object.keys(projectsByYear)
+  .map(year => parseInt(year))
+  .sort((a, b) => b - a);
 ---
 
 <Layout title="Projects">
-  <h1>Projects</h1>
-  <p>Here are some of the projects I've worked on. I'm currently in the process of writing them up!</p>
-</Layout> 
+  <div class="projects-header">
+    <h1>Projects</h1>
+    <p>A collection of projects I've worked on over the years.</p>
+  </div>
+
+  <div class="projects-container">
+    {sortedYears.map(year => (
+      <section class="year-section">
+        <h2 class="year-heading">{year}</h2>
+        <div class="projects-list">
+          {projectsByYear[year].map(project => (
+            <article class="project-card">
+              <div class="project-content">
+                <h3 class="project-title">
+                  <a href={`/projects/${project.id}`} class="project-link">
+                    {project.title}
+                  </a>
+                </h3>
+                <p class="project-description">{project.description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+
+
+</Layout>
+
+<style>
+  .projects-header {
+    margin-bottom: 2rem;
+  }
+
+  .projects-header h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .projects-header p {
+    margin-bottom: 1.5rem;
+  }
+
+
+
+  .projects-container {
+  }
+
+  .year-section {
+    margin-bottom: 3rem;
+  }
+
+  .year-heading {
+    font-size: 1.5rem;
+    font-weight: var(--heading-weight);
+    color: var(--flexoki-600);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.5px solid #282726;
+  }
+
+  .theme-dark .year-heading {
+    color: var(--flexoki-300);
+    border-color: #282726;
+  }
+
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    display: flex;
+    background: var(--flexoki-black);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+  }
+
+  .theme-dark .project-card {
+    background: var(--flexoki-black);
+  }
+
+  .project-content {
+    flex: 1;
+    padding: 1.5rem 1.5rem 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .project-title {
+    font-size: 2rem;
+    font-weight: var(--heading-weight);
+    margin-bottom: 0.75rem;
+    margin-top: 0;
+  }
+
+  .project-link {
+    color: var(--color-tx-normal);
+    text-decoration: underline;
+  }
+
+  .project-link:hover {
+    color: var(--color-action);
+    border-color: var(--color-action);
+  }
+
+  .theme-dark .project-link {
+    color: var(--color-tx-normal);
+  }
+
+  .project-description {
+    color: var(--flexoki-300);
+    line-height: var(--line-height);
+    margin: 0;
+  }
+
+  .theme-dark .project-description {
+    color: var(--flexoki-300);
+  }
+
+
+
+  /* Mobile responsiveness */
+  @media (max-width: 600px) {
+    .project-content {
+      padding: 1rem 1rem 1rem 0;
+    }
+    
+
+  }
+</style> 

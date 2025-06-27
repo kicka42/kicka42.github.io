@@ -6,6 +6,7 @@ export interface Props {
 }
 
 const { title } = Astro.props;
+const bodyClass = title.toLowerCase().replace(' ', '-');
 ---
 
 <!doctype html>
@@ -18,7 +19,7 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class={bodyClass}>
 		<script>
 			if (
 				localStorage.theme === 'dark' ||
@@ -50,4 +51,10 @@ const { title } = Astro.props;
 			</main>
 		</div>
 	</body>
-</html> 
+</html>
+
+<style>
+	.page-projects .wrap {
+		max-width: none;
+	}
+</style> 
