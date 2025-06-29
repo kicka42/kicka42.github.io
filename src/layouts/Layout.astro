@@ -39,12 +39,19 @@ const bodyClass = title.toLowerCase().replace(' ', '-');
 						/>
 					</a>
 				</span>
-				<span class="flex-shrink">
+				<div class="nav-links">
 					<a href="/projects" class="muted plain ssl">Projects</a>
 					<a href="/workflows" class="muted plain ssl">Workflows</a>
 					<a href="/notes" class="muted plain ssl">Notes</a>
 					<a href="/contact" class="muted plain ssl">Contact</a>
-				</span>
+				</div>
+				<button class="hamburger" id="hamburger-button" aria-label="Menu" aria-expanded="false">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<line x1="3" y1="12" x2="21" y2="12"></line>
+						<line x1="3" y1="6" x2="21" y2="6"></line>
+						<line x1="3" y1="18" x2="21" y2="18"></line>
+					</svg>
+				</button>
 			</nav>
 			<main>
 				<slot />
@@ -57,4 +64,65 @@ const bodyClass = title.toLowerCase().replace(' ', '-');
 	.page-projects .wrap {
 		max-width: none;
 	}
-</style> 
+
+	.hamburger {
+		display: none;
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 0;
+		z-index: 1000;
+	}
+
+	.hamburger svg {
+		stroke: var(--color-fg);
+	}
+
+	.nav-links {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	/* On mobile, hide the navigation links and show the hamburger button */
+	@media (max-width: 768px) {
+		.nav-links {
+			display: none;
+			position: absolute;
+			top: 70px;
+			right: 1.25rem;
+			background: var(--color-bg);
+			border: 1px solid var(--color-border);
+			border-radius: 8px;
+			flex-direction: column;
+			padding: 1rem;
+			box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+			gap: 1rem;
+			align-items: flex-start;
+		}
+
+		/* This class will be toggled with JavaScript */
+		.nav-links.is-open {
+			display: flex;
+		}
+
+		.hamburger {
+			display: block;
+		}
+
+		.nav-links a {
+			margin: 0;
+		}
+	}
+</style>
+
+<script>
+	const hamburgerButton = document.getElementById('hamburger-button');
+	const navLinks = document.querySelector('.nav-links');
+
+	hamburgerButton.addEventListener('click', () => {
+		navLinks.classList.toggle('is-open');
+		const isExpanded = navLinks.classList.contains('is-open');
+		hamburgerButton.setAttribute('aria-expanded', isExpanded.toString());
+	});
+</script> 
