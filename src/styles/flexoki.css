@@ -660,7 +660,7 @@ body {
   font-family: var(--font-content);
   margin: 2vw auto 0 auto;
   line-height: var(--line-height);
-  padding: 2rem 0 24rem;
+  padding: 2rem 0 4rem;
   overflow-x: hidden;
   font-size: 1.8rem;
   font-size: calc(1.5rem + 0.25vw);

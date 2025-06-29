@@ -46,10 +46,14 @@ const bodyClass = title.toLowerCase().replace(' ', '-');
 					<a href="/contact" class="muted plain ssl">Contact</a>
 				</div>
 				<button class="hamburger" id="hamburger-button" aria-label="Menu" aria-expanded="false">
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<svg class="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 						<line x1="3" y1="12" x2="21" y2="12"></line>
 						<line x1="3" y1="6" x2="21" y2="6"></line>
 						<line x1="3" y1="18" x2="21" y2="18"></line>
+					</svg>
+					<svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<line x1="18" y1="6" x2="6" y2="18"></line>
+						<line x1="6" y1="6" x2="18" y2="18"></line>
 					</svg>
 				</button>
 			</nav>
@@ -75,7 +79,21 @@ const bodyClass = title.toLowerCase().replace(' ', '-');
 	}
 
 	.hamburger svg {
-		stroke: var(--color-fg);
+		stroke: var(--color-tx-normal);
+	}
+
+	.hamburger .close-icon {
+		display: none;
+		stroke: var(--color-tx-normal);
+	}
+
+	.hamburger.is-open .hamburger-icon {
+		display: none;
+	}
+
+	.hamburger.is-open .close-icon {
+		display: block;
+		stroke: var(--color-tx-normal);
 	}
 
 	.nav-links {
@@ -86,19 +104,39 @@ const bodyClass = title.toLowerCase().replace(' ', '-');
 
 	/* On mobile, hide the navigation links and show the hamburger button */
 	@media (max-width: 768px) {
+
+		/* Use flex-wrap to keep avatar and hamburger on same line, menu below */
+		nav {
+			position: relative;
+			flex-direction: row;
+			align-items: center;
+			flex-wrap: wrap; /* Allow nav-links to wrap to next line */
+		}
+
+		/* Show avatar in top left on mobile */
+		nav > span.flex-grow {
+			display: flex;
+			flex-grow: 1;
+			justify-content: flex-start; /* Align avatar to the left */
+			order: 1;
+		}
+
+		.hamburger {
+			display: block;
+			margin-left: auto; /* Position hamburger to the right */
+			order: 2;
+		}
+
 		.nav-links {
 			display: none;
-			position: absolute;
-			top: 70px;
-			right: 1.25rem;
-			background: var(--color-bg);
-			border: 1px solid var(--color-border);
-			border-radius: 8px;
+			order: 3; /* Ensure nav-links come after avatar and hamburger */
+			flex-basis: 100%; /* Take full width, forcing to next line */
+			background: var(--color-bg-primary);
 			flex-direction: column;
-			padding: 1rem;
-			box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-			gap: 1rem;
-			align-items: flex-start;
+			padding: 2rem 1.25rem 2rem 1.25rem;
+			gap: 1.5rem;
+			align-items: flex-end; /* Right-align menu items */
+			width: 100%;
 		}
 
 		/* This class will be toggled with JavaScript */
@@ -106,12 +144,30 @@ const bodyClass = title.toLowerCase().replace(' ', '-');
 			display: flex;
 		}
 
-		.hamburger {
-			display: block;
-		}
-
 		.nav-links a {
 			margin: 0;
+			font-size: inherit; /* Use the same font size as main page text */
+			text-align: right; /* Right-align text */
+			padding: 0.5rem 0;
+			color: var(--color-tx-normal) !important; /* Use normal text color instead of muted */
+			transition: color 0.2s ease; /* Smooth color transition */
+		}
+
+		/* Add hover and active states for mobile menu items */
+		.nav-links a:hover,
+		.nav-links a:active {
+			color: var(--color-action) !important; /* Same hover color as desktop */
+		}
+
+		/* For touch devices, add active state styling */
+		@media (hover: none) and (pointer: coarse) {
+			.nav-links a:active {
+				color: var(--color-action) !important;
+				background-color: var(--color-bg-hover);
+				border-radius: 4px;
+				padding: 0.75rem 0.5rem;
+				margin: -0.25rem -0.5rem;
+			}
 		}
 	}
 </style>
@@ -120,9 +176,32 @@ const bodyClass = title.toLowerCase().replace(' ', '-');
 	const hamburgerButton = document.getElementById('hamburger-button');
 	const navLinks = document.querySelector('.nav-links');
 
-	hamburgerButton.addEventListener('click', () => {
+	function toggleMenu() {
 		navLinks.classList.toggle('is-open');
+		hamburgerButton.classList.toggle('is-open');
 		const isExpanded = navLinks.classList.contains('is-open');
 		hamburgerButton.setAttribute('aria-expanded', isExpanded.toString());
+	}
+
+	function closeMenu() {
+		navLinks.classList.remove('is-open');
+		hamburgerButton.classList.remove('is-open');
+		hamburgerButton.setAttribute('aria-expanded', 'false');
+	}
+
+	hamburgerButton.addEventListener('click', toggleMenu);
+
+	// Close menu when clicking on a link
+	navLinks.addEventListener('click', (e) => {
+		if (e.target.tagName === 'A') {
+			closeMenu();
+		}
+	});
+
+	// Close menu when clicking outside
+	document.addEventListener('click', (e) => {
+		if (!hamburgerButton.contains(e.target) && !navLinks.contains(e.target)) {
+			closeMenu();
+		}
 	});
 </script> 
