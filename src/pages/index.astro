@@ -16,6 +16,15 @@ import Layout from '../layouts/Layout.astro';
 		Feel free to look around and <a href="/contact">get in touch</a> if you'd like to collaborate.
 	</p>
 
+	<div class="social-section">
+		<a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link">
+			<img src="/GitHub_Logo_White.png" alt="GitHub" class="social-icon">
+		</a>
+		<a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="social-link">
+			<img src="/linkedin.png" alt="LinkedIn" class="social-icon">
+		</a>
+	</div>
+
 	<div class="art-section mn2">
 		<img src="/eg.png" alt="Egon Schiele Self-Portrait with Raised Arms, 1914" class="art-image">
 		<p class="art-caption muted">
@@ -24,8 +33,6 @@ import Layout from '../layouts/Layout.astro';
 		</p>
 	</div>
 
-
-
 	<div class="signature-section">
 		<img src="/sign.png" alt="Signature" class="signature-image">
 	</div>
@@ -33,6 +40,37 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
+	.social-section {
+		text-align: left;
+		margin: 1rem 0 0.5rem 0;
+	}
+	
+	.social-link {
+		display: inline-block;
+		text-decoration: none;
+		margin-right: 1rem;
+	}
+	
+	.social-icon {
+		width: 84px;
+		height: auto;
+		filter: opacity(0.7);
+		transition: filter 0.2s ease;
+	}
+	
+	.social-icon:hover {
+		filter: opacity(1);
+	}
+	
+	/* Dark theme adjustments */
+	.theme-dark .social-icon {
+		filter: opacity(0.8);
+	}
+	
+	.theme-dark .social-icon:hover {
+		filter: opacity(1);
+	}
+
 	.art-section {
 		text-align: center;
 		margin: 2rem 0;
@@ -59,6 +97,10 @@ import Layout from '../layouts/Layout.astro';
 		
 		.art-caption {
 			font-size: var(--font-small);
+		}
+		
+		.social-icon {
+			width: 20px;
 		}
 	}
 	
