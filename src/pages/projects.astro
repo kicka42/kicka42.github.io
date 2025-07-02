@@ -2,15 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import { projects } from '../projects-data.js';
 
-// Get the query parameter to determine if we should show all projects
-const url = new URL(Astro.request.url);
-const showAll = url.searchParams.get('view') === 'all';
-
-// Filter projects based on visibility settings
-const visibleProjects = showAll ? projects : projects.filter(project => project.visible);
-
-// Group projects by year (descending order)
-const projectsByYear = visibleProjects.reduce((acc, project) => {
+// Group all projects by year (descending order)
+const projectsByYear = projects.reduce((acc, project) => {
   if (!acc[project.year]) {
     acc[project.year] = [];
   }
@@ -36,7 +29,7 @@ const sortedYears = Object.keys(projectsByYear)
         <h2 class="year-heading">{year}</h2>
         <div class="projects-list">
           {projectsByYear[year].map(project => (
-            <article class="project-card">
+            <article class="project-card" data-visible={project.visible}>
               <div class="project-content">
                 <h3 class="project-title">
                   <a href={`/projects/${project.id}`} class="project-link">
@@ -65,6 +58,22 @@ const sortedYears = Object.keys(projectsByYear)
 
 </Layout>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const showAll = urlParams.get('view') === 'all';
+
+    if (!showAll) {
+      const allProjects = document.querySelectorAll('.project-card');
+      allProjects.forEach(projectCard => {
+        if (projectCard.getAttribute('data-visible') === 'false') {
+          projectCard.style.display = 'none';
+        }
+      });
+    }
+  });
+</script>
+
 <style>
   .projects-header {
     margin-bottom: 2rem;
@@ -77,8 +86,6 @@ const sortedYears = Object.keys(projectsByYear)
   .projects-header p {
     margin-bottom: 1.5rem;
   }
-
-
 
   .projects-container {
   }
@@ -157,14 +164,10 @@ const sortedYears = Object.keys(projectsByYear)
     color: var(--flexoki-300);
   }
 
-
-
   /* Mobile responsiveness */
   @media (max-width: 600px) {
     .project-content {
       padding: 1rem 1rem 1rem 0;
     }
-    
-
   }
 </style> 
