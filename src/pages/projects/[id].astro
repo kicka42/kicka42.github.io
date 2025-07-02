@@ -19,13 +19,6 @@ if (!project) {
 
 <Layout title={project.title}>
   <div class="project-page">
-    <!-- Back navigation -->
-    <nav class="back-nav">
-      <a href="/projects" class="back-link">
-        ← Back to Projects
-      </a>
-    </nav>
-
     <!-- Project header -->
     <header class="project-header">
       <div class="project-image-large">
@@ -36,26 +29,33 @@ if (!project) {
       </div>
       <div class="project-info">
         <div class="project-meta">
-          <span class="project-year">{project.year}</span>
+          <span class="project-year font-style-heading">{project.year}</span>
         </div>
         <h1 class="project-title">{project.title}</h1>
         <p class="project-summary">{project.description}</p>
         
         <!-- Technologies -->
-        <div class="technologies">
-          <h3>Technologies Used</h3>
-          <div class="tech-tags">
-            {project.technologies.map(tech => (
-              <span class="tech-tag">{tech}</span>
-            ))}
+        {project.technologies && project.technologies.length > 0 && (
+          <div class="technologies">
+            <h3>Technologies Used</h3>
+            <div class="tech-tags">
+              {project.technologies.map(tech => (
+                <span class="tech-tag">{tech}</span>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         <!-- Links -->
         <div class="project-links">
           {project.github && (
             <a href={project.github} class="project-btn" target="_blank" rel="noopener noreferrer">
               View Code
+            </a>
+          )}
+          {project.video && (
+            <a href={project.video} class="project-btn" target="_blank" rel="noopener noreferrer">
+              View Video
             </a>
           )}
           {project.demo && (
@@ -87,50 +87,25 @@ if (!project) {
     margin: 0 auto;
   }
 
-  .back-nav {
-    margin-bottom: 2rem;
-  }
-
-  .back-link {
-    display: inline-flex;
-    align-items: center;
-    color: var(--flexoki-600);
-    text-decoration: none;
-    font-size: var(--font-smaller);
-    transition: color 0.2s ease;
-  }
-
-  .back-link:hover {
-    color: var(--flexoki-800);
-  }
-
-  .theme-dark .back-link {
-    color: var(--flexoki-300);
-  }
-
-  .theme-dark .back-link:hover {
-    color: var(--flexoki-100);
+  .font-style-heading {
+    font-size: 1.5rem;
+    font-weight: var(--heading-weight);
   }
 
   .project-header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
     margin-bottom: 3rem;
-    align-items: start;
+    padding-bottom: 3rem;
+    border-bottom: 0.5px solid #282726;
   }
 
   .project-image-large {
-    position: sticky;
-    top: 2rem;
+    margin-bottom: 3rem;
   }
 
   .project-image-large img {
     width: 100%;
-    height: 300px;
     object-fit: cover;
     border-radius: var(--image-radius);
-    box-shadow: 0 4px 12px rgba(var(--flexoki-200-rgb), 0.3);
   }
 
   .theme-dark .project-image-large img {
@@ -138,7 +113,10 @@ if (!project) {
   }
 
   .project-info {
-    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .project-meta {
@@ -147,12 +125,11 @@ if (!project) {
 
   .project-year {
     display: inline-block;
-    padding: 0.25rem 0.75rem;
-    background: var(--flexoki-100);
+    padding: 0.25rem;
     color: var(--flexoki-600);
     border-radius: var(--border-radius);
-    font-size: var(--font-smaller);
-    font-weight: 500;
+    font-size: 1.5rem;
+    font-weight: var(--heading-weight);
   }
 
   .theme-dark .project-year {
@@ -164,17 +141,17 @@ if (!project) {
     font-size: 2.5rem;
     font-weight: var(--heading-weight);
     margin-bottom: 1rem;
-    color: var(--flexoki-800);
+    color: var(--color-tx-normal);
+    text-decoration: underline;
   }
 
   .theme-dark .project-title {
-    color: var(--flexoki-100);
+    color: var(--color-tx-normal);
   }
 
   .project-summary {
-    font-size: 1.1rem;
     line-height: var(--line-height);
-    color: var(--flexoki-600);
+    color: var(--flexoki-300);
     margin-bottom: 2rem;
   }
 
@@ -233,12 +210,12 @@ if (!project) {
     color: var(--flexoki-700);
     background: var(--flexoki-paper);
     transition: all 0.2s ease;
-    font-weight: 500;
+    font-weight: 400;
   }
 
   .project-btn:hover {
-    background: var(--flexoki-50);
-    border-color: var(--flexoki-400);
+    border: 1px solid var(--color-action);
+    background-color: var(--color-action);
   }
 
   .project-btn-primary {
@@ -274,24 +251,18 @@ if (!project) {
     border-color: var(--flexoki-200);
   }
 
-  .project-content {
-    border-top: 1px solid var(--flexoki-200);
-    padding-top: 3rem;
-  }
-
   .theme-dark .project-content {
     border-color: var(--flexoki-700);
   }
 
   .project-description h2 {
-    font-size: 1.5rem;
-    font-weight: var(--heading-weight);
-    margin-bottom: 1.5rem;
-    color: var(--flexoki-800);
+    font-size: inherit;
+    margin-bottom: 2rem;
+    color: var(--flexoki-300);
   }
 
   .theme-dark .project-description h2 {
-    color: var(--flexoki-100);
+    color: var(--flexoki-300);
   }
 
   .description-text {
@@ -304,11 +275,12 @@ if (!project) {
   }
 
   .description-text p {
-    margin-bottom: 1rem;
+    color: var(--flexoki-300);
+    margin-bottom: 1.5rem;
   }
 
-  .description-text p:last-child {
-    margin-bottom: 0;
+  .theme-dark .description-text p {
+    color: var(--flexoki-300);
   }
 
   /* Mobile responsiveness */

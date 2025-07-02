@@ -14,17 +14,15 @@ export const projects = [
     visible: false,
   },
   {
-    id: "task-management-app",
-    year: 2024,
-    title: "Task Management App",
+    id: "hotel-meduza",
+    year: 2020,
+    title: "Hotel Meduza",
     description:
-      "A full-stack task management application with real-time updates and team collaboration features. Built with React, Node.js, and WebSocket technology.",
+      "A theatre performance written and directed by Ira Nirsha, produced by Malwina Kajetańczyk.",
     fullDescription:
       "A comprehensive task management solution designed for modern teams. This application provides real-time collaboration features, allowing team members to work together seamlessly on projects.\n\nCore functionality includes:\n• Real-time task updates using WebSocket technology\n• Team collaboration with live notifications\n• Project organization with customizable boards\n• Due date tracking and priority management\n• File attachments and comments on tasks\n• User authentication and role-based permissions\n\nThe application is built with a React frontend and Node.js backend, ensuring scalability and performance.",
-    image: "/avatar.png",
-    technologies: ["React", "Node.js", "WebSocket", "MongoDB", "Express"],
-    github: "https://github.com/example/task-app",
-    demo: "https://taskapp.example.com",
+    image: "/hotel-meduza.png",
+    video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     visible: false,
   },
   {
