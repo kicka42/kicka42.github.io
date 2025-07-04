@@ -49,17 +49,17 @@ if (!project) {
         <!-- Links -->
         <div class="project-links">
           {project.github && (
-            <a href={project.github} class="project-btn" target="_blank" rel="noopener noreferrer">
+            <a href={project.github} class="button" target="_blank" rel="noopener noreferrer">
               View Code
             </a>
           )}
           {project.video && (
-            <a href={project.video} class="project-btn" target="_blank" rel="noopener noreferrer">
+            <a href={project.video} class="button" target="_blank" rel="noopener noreferrer">
               View Video
             </a>
           )}
           {project.demo && (
-            <a href={project.demo} class="project-btn project-btn-primary" target="_blank" rel="noopener noreferrer">
+            <a href={project.demo} class="button" target="_blank" rel="noopener noreferrer">
               Live Demo
             </a>
           )}
@@ -201,7 +201,7 @@ if (!project) {
     gap: 1rem;
   }
 
-  .project-btn {
+  .button {
     display: inline-block;
     padding: 0.75rem 1.5rem;
     border: 1px solid var(--flexoki-300);
@@ -213,46 +213,9 @@ if (!project) {
     font-weight: 400;
   }
 
-  .project-btn:hover {
+  .button:hover {
     border: 1px solid var(--color-action);
     background-color: var(--color-action);
-  }
-
-  .project-btn-primary {
-    background: var(--flexoki-600);
-    color: var(--flexoki-paper);
-    border-color: var(--flexoki-600);
-  }
-
-  .project-btn-primary:hover {
-    background: var(--flexoki-700);
-    border-color: var(--flexoki-700);
-  }
-
-  .theme-dark .project-btn {
-    background: var(--flexoki-850);
-    color: var(--flexoki-200);
-    border-color: var(--flexoki-700);
-  }
-
-  .theme-dark .project-btn:hover {
-    background: var(--flexoki-800);
-    border-color: var(--flexoki-600);
-  }
-
-  .theme-dark .project-btn-primary {
-    background: var(--flexoki-300);
-    color: var(--flexoki-950);
-    border-color: var(--flexoki-300);
-  }
-
-  .theme-dark .project-btn-primary:hover {
-    background: var(--flexoki-200);
-    border-color: var(--flexoki-200);
-  }
-
-  .theme-dark .project-content {
-    border-color: var(--flexoki-700);
   }
 
   .project-description h2 {
@@ -302,8 +265,16 @@ if (!project) {
       flex-direction: column;
     }
 
-    .project-btn {
+    .button {
       text-align: center;
     }
+  }
+
+  .project-content {
+    padding-top: 3rem;
+  }
+
+  .theme-dark .project-content {
+    border-color: var(--flexoki-700);
   }
 </style> 

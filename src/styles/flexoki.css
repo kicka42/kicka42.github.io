@@ -1514,7 +1514,8 @@ input[type="password"] {
   width: var(--input-width);
 }
 input[type="submit"],
-button {
+button,
+.button {
   -webkit-appearance: none;
   border-radius: 3px;
   background-color: var(--color-tx-normal);
@@ -1522,11 +1523,16 @@ button {
   color: var(--color-bg-primary);
   font-weight: 400;
   padding: 0.5em 1em;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
 }
 input[type="submit"]:hover,
-button:hover {
+button:hover,
+.button:hover {
   border: 1px solid var(--color-action);
   background-color: var(--color-action);
+  color: var(--color-bg-primary);
 }
 select {
   -webkit-appearance: none;
