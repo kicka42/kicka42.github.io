@@ -1,5 +1,17 @@
 export const projects = [
   {
+    id: "slicing-pie-notion-template",
+    year: 2024,
+    title: "Slicing Pie Notion Template",
+    description:
+      "A comprehensive Notion template for implementing the Slicing Pie dynamic equity sharing model in early-stage startups. Tracks contributions, calculates equity splits, and manages team member data automatically.",
+    fullDescription:
+      "A professionally designed Notion template that implements the Slicing Pie method - a dynamic equity sharing model developed by Chicago economics professor Mike Moyer for early-stage startups to distribute equity fairly.\n\nThe template features:\n• **Dynamic Equity Tracking**: Automatically calculates each team member's percentage share based on their actual contributions\n• **Contribution Categories**: Tracks time, money, ideas, relationships, and resources with appropriate multipliers\n• **Real-time Calculations**: Converts all contributions into normalized 'Slices' with live equity percentage updates\n• **Team Member Management**: Comprehensive profiles with role definitions and departure protocols\n• **Transparency Dashboard**: Visual representation of everyone's contributions and current equity stakes\n• **Built-in Formulas**: Implements the core Slicing Pie formula (Individual's % = Individual's Slices ÷ Total Slices)\n\nThis template solves the common problem of unfair equity splits that cause 65% of startup failures due to co-founder disputes. It's designed for bootstrapped startups and applies until the company reaches break-even or secures major funding, at which point the equity split 'freezes'.\n\nPerfect for startup teams who want to maintain fairness and transparency while avoiding the conflicts that arise from traditional fixed equity splits based on guesswork.",
+    image: "/project-slicing-pie.png",
+    technologies: ["Notion", "Database Design", "Formula Logic", "Equity Modeling"],
+    visible: true,
+  },
+  {
     id: "portfolio-website",
     year: 2024,
     title: "Portfolio Website",
@@ -15,14 +27,13 @@ export const projects = [
   },
   {
     id: "hotel-meduza",
-    year: 2020,
+    year: 2019,
     title: "Hotel Meduza",
     description:
-      "A theatre performance written and directed by Ira Nirsha, produced by Malwina Kajetańczyk.",
+      "A theatrical performance that turned the basement of Maska Theater into a mysterious underwater hotel. Part of the 2019 European Stadium of Culture festival in Rzeszów, this interdisciplinary piece combined live performance, visual art, and multimedia installation.",
     fullDescription:
-      "A comprehensive task management solution designed for modern teams. This application provides real-time collaboration features, allowing team members to work together seamlessly on projects.\n\nCore functionality includes:\n• Real-time task updates using WebSocket technology\n• Team collaboration with live notifications\n• Project organization with customizable boards\n• Due date tracking and priority management\n• File attachments and comments on tasks\n• User authentication and role-based permissions\n\nThe application is built with a React frontend and Node.js backend, ensuring scalability and performance.",
+      "Written and directed by Ira Nirsha with producer Malwina Kajetańczyk, the performance brought together an international creative team.\n\nI handled the multimedia installation, orchestrating a setup of projectors, TVs, and cameras to create live video effects that enhanced the mysterious underwater atmosphere. The tech setup was crucial in bringing the submerged hotel concept to life, creating immersive visuals that complemented the live performance.\n\nDuring rehearsals, I also grabbed my old Sony camcorder and filmed our process. The result is a [raw, behind-the-scenes video](https://drive.google.com/file/d/1Q_mJ6Nx_1yf6ImGPZPxILOmD_g5lBfVR/view?usp=sharing) that captures the energy of our collaboration.\n\nThe performance ran for three nights, creating an intimate and mysterious experience. You can also check out [photos and videos](https://photos.app.goo.gl/81GSWNBizYiLCuRY8) from the performance to see how the underwater hotel concept came to life.",
     image: "/hotel-meduza.png",
-    video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     visible: false,
   },
   {

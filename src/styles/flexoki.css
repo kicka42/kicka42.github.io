@@ -1530,9 +1530,9 @@ button,
 input[type="submit"]:hover,
 button:hover,
 .button:hover {
-  border: 1px solid var(--color-action);
-  background-color: var(--color-action);
-  color: var(--color-bg-primary);
+  border: 1px solid var(--color-tx-normal);
+  background-color: transparent;
+  color: var(--color-tx-normal);
 }
 select {
   -webkit-appearance: none;

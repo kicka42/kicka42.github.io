@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { projects } from '../../projects-data.js';
+import { marked } from 'marked';
 
 // This function runs at build time to generate static paths
 export async function getStaticPaths() {
@@ -15,6 +16,8 @@ const project = projects.find(p => p.id === id);
 if (!project) {
   return Astro.redirect('/projects');
 }
+
+const parsedDescription = marked.parse(project.fullDescription);
 ---
 
 <Layout title={project.title}>
@@ -71,10 +74,7 @@ if (!project) {
     <main class="project-content">
       <section class="project-description">
         <h2>About This Project</h2>
-        <div class="description-text">
-          {project.fullDescription.split('\n').map(paragraph => (
-            paragraph.trim() && <p>{paragraph}</p>
-          ))}
+        <div class="description-text" set:html={parsedDescription}>
         </div>
       </section>
     </main>
@@ -201,21 +201,12 @@ if (!project) {
     gap: 1rem;
   }
 
-  .button {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    border: 1px solid var(--flexoki-300);
-    border-radius: var(--border-radius);
-    text-decoration: none;
-    color: var(--flexoki-700);
-    background: var(--flexoki-paper);
-    transition: all 0.2s ease;
-    font-weight: 400;
+  .project-content {
+    padding-top: 3rem;
   }
 
-  .button:hover {
-    border: 1px solid var(--color-action);
-    background-color: var(--color-action);
+  .theme-dark .project-content {
+    border-color: var(--flexoki-700);
   }
 
   .project-description h2 {
@@ -268,13 +259,5 @@ if (!project) {
     .button {
       text-align: center;
     }
-  }
-
-  .project-content {
-    padding-top: 3rem;
-  }
-
-  .theme-dark .project-content {
-    border-color: var(--flexoki-700);
   }
 </style> 
