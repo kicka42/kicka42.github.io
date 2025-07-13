@@ -48,7 +48,7 @@ export const projects = [
     description:
       "A photography exhibition by Michał Drozd in Rzeszów (2016), featuring artistic constructions of motorcycle-like vehicles from burnt and corroded elements.",
     fullDescription:
-      'I had the unique opportunity to model for "Rust Rider," a significant photography exhibition by Michał Drozd held in Rzeszów in 2016. In this project, I brought a human element to the collection, posing with striking motorcycle-like sculptures that Drozd constructed from burnt and corroded materials.\n\nThe exhibition, held at Dagart Galerie, featured these artistic constructions, which were not functional vehicles but powerful symbols of time and heritage. As a model, I worked closely with the photographer to create a series of images that juxtaposed the human form against the raw, industrial aesthetic of his work, helping to bring the artistic vision to life.',
+      'I had the unique opportunity to model for "Rust Rider," a significant photography exhibition by Michał Drozd held in Rzeszów in 2016. In this project, I brought a human element to the collection, posing with striking motorcycle-like sculptures that Drozd constructed from burnt and corroded materials. You can see how the artistic vision came to life in these [photos and videos](https://photos.app.goo.gl/81GSWNBizYiLCuRY8) from the project.\n\nThe exhibition, held at Dagart Galerie, featured these artistic constructions, which were not functional vehicles but powerful symbols of time and heritage. As a model, I worked closely with the photographer to create a series of images that juxtaposed the human form against the raw, industrial aesthetic of his work.',
     image: "/project-rust-riders.png",
     visible: false,
   },
