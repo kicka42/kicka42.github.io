@@ -8,7 +8,12 @@ export const projects = [
     fullDescription:
       "A professionally designed Notion template that implements the Slicing Pie method - a dynamic equity sharing model developed by Chicago economics professor Mike Moyer for early-stage startups to distribute equity fairly.\n\nThe template features:\n• **Dynamic Equity Tracking**: Automatically calculates each team member's percentage share based on their actual contributions\n• **Contribution Categories**: Tracks time, money, ideas, relationships, and resources with appropriate multipliers\n• **Real-time Calculations**: Converts all contributions into normalized 'Slices' with live equity percentage updates\n• **Team Member Management**: Comprehensive profiles with role definitions and departure protocols\n• **Transparency Dashboard**: Visual representation of everyone's contributions and current equity stakes\n• **Built-in Formulas**: Implements the core Slicing Pie formula (Individual's % = Individual's Slices ÷ Total Slices)\n\nThis template solves the common problem of unfair equity splits that cause 65% of startup failures due to co-founder disputes. It's designed for bootstrapped startups and applies until the company reaches break-even or secures major funding, at which point the equity split 'freezes'.\n\nPerfect for startup teams who want to maintain fairness and transparency while avoiding the conflicts that arise from traditional fixed equity splits based on guesswork.",
     image: "/project-slicing-pie.png",
-    technologies: ["Notion", "Database Design", "Formula Logic", "Equity Modeling"],
+    technologies: [
+      "Notion",
+      "Database Design",
+      "Formula Logic",
+      "Equity Modeling",
+    ],
     visible: true,
   },
   {
@@ -34,6 +39,17 @@ export const projects = [
     fullDescription:
       "Written and directed by Ira Nirsha with producer Malwina Kajetańczyk, the performance brought together an international creative team.\n\nI handled the multimedia installation, orchestrating a setup of projectors, TVs, and cameras to create live video effects that enhanced the mysterious underwater atmosphere. The tech setup was crucial in bringing the submerged hotel concept to life, creating immersive visuals that complemented the live performance.\n\nDuring rehearsals, I also grabbed my old Sony camcorder and filmed our process. The result is a [raw, behind-the-scenes video](https://drive.google.com/file/d/1Q_mJ6Nx_1yf6ImGPZPxILOmD_g5lBfVR/view?usp=sharing) that captures the energy of our collaboration.\n\nThe performance ran for three nights, creating an intimate and mysterious experience. You can also check out [photos and videos](https://photos.app.goo.gl/81GSWNBizYiLCuRY8) from the performance to see how the underwater hotel concept came to life.",
     image: "/hotel-meduza.png",
+    visible: false,
+  },
+  {
+    id: "rust-riders",
+    year: 2016,
+    title: "Rust Riders",
+    description:
+      "A photography exhibition by Michał Drozd in Rzeszów (2016), featuring artistic constructions of motorcycle-like vehicles from burnt and corroded elements.",
+    fullDescription:
+      'I had the unique opportunity to model for "Rust Rider," a significant photography exhibition by Michał Drozd held in Rzeszów in 2016. In this project, I brought a human element to the collection, posing with striking motorcycle-like sculptures that Drozd constructed from burnt and corroded materials.\n\nThe exhibition, held at Dagart Galerie, featured these artistic constructions, which were not functional vehicles but powerful symbols of time and heritage. As a model, I worked closely with the photographer to create a series of images that juxtaposed the human form against the raw, industrial aesthetic of his work, helping to bring the artistic vision to life.',
+    image: "/project-rust-riders.png",
     visible: false,
   },
   {
