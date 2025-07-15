@@ -2,18 +2,12 @@ export const projects = [
   {
     id: "slicing-pie-notion-template",
     year: 2024,
-    title: "Slicing Pie Notion Template",
+    title: "Slicing Pie with Notion",
     description:
       "A comprehensive Notion template for implementing the Slicing Pie dynamic equity sharing model in early-stage startups. Tracks contributions, calculates equity splits, and manages team member data automatically.",
     fullDescription:
       "A professionally designed Notion template that implements the Slicing Pie method - a dynamic equity sharing model developed by Chicago economics professor Mike Moyer for early-stage startups to distribute equity fairly.\n\nThe template features:\n• **Dynamic Equity Tracking**: Automatically calculates each team member's percentage share based on their actual contributions\n• **Contribution Categories**: Tracks time, money, ideas, relationships, and resources with appropriate multipliers\n• **Real-time Calculations**: Converts all contributions into normalized 'Slices' with live equity percentage updates\n• **Team Member Management**: Comprehensive profiles with role definitions and departure protocols\n• **Transparency Dashboard**: Visual representation of everyone's contributions and current equity stakes\n• **Built-in Formulas**: Implements the core Slicing Pie formula (Individual's % = Individual's Slices ÷ Total Slices)\n\nThis template solves the common problem of unfair equity splits that cause 65% of startup failures due to co-founder disputes. It's designed for bootstrapped startups and applies until the company reaches break-even or secures major funding, at which point the equity split 'freezes'.\n\nPerfect for startup teams who want to maintain fairness and transparency while avoiding the conflicts that arise from traditional fixed equity splits based on guesswork.",
     image: "/project-slicing-pie.png",
-    technologies: [
-      "Notion",
-      "Database Design",
-      "Formula Logic",
-      "Equity Modeling",
-    ],
     visible: true,
   },
   {
@@ -48,7 +42,7 @@ export const projects = [
     description:
       "A photography exhibition by Michał Drozd in Rzeszów (2016), featuring artistic constructions of motorcycle-like vehicles from burnt and corroded elements.",
     fullDescription:
-      'I had the unique opportunity to model for "Rust Rider," a significant photography exhibition by Michał Drozd held in Rzeszów in 2016. In this project, I brought a human element to the collection, posing with striking motorcycle-like sculptures that Drozd constructed from burnt and corroded materials. You can see how the artistic vision came to life in these [photos and videos](https://photos.app.goo.gl/81GSWNBizYiLCuRY8) from the project.\n\nThe exhibition, held at Dagart Galerie, featured these artistic constructions, which were not functional vehicles but powerful symbols of time and heritage. As a model, I worked closely with the photographer to create a series of images that juxtaposed the human form against the raw, industrial aesthetic of his work.',
+      'I had the unique opportunity to model for "Rust Rider," a significant photography exhibition by Michał Drozd. I brought a human element to the collection, posing with striking motorcycle-like sculptures that Drozd constructed from burnt and corroded materials. You can see how the artistic vision came to life in these [photos and videos](https://photos.app.goo.gl/81GSWNBizYiLCuRY8) from the project.\n\nThe exhibition, held at Dagart Galerie, featured these artistic constructions, which were not functional vehicles but powerful symbols of time and heritage. As a model, I worked closely with the photographer to create a series of images that juxtaposed the human form against the raw, industrial aesthetic of his work.',
     image: "/project-rust-riders.png",
     visible: false,
   },
