@@ -1,0 +1,245 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { caseStudies } from '../case-studies-data.js';
+
+// Sort case studies by year (most recent first)
+const sortedCaseStudies = caseStudies.sort((a, b) => b.year - a.year);
+---
+
+<Layout title="Case Studies">
+  <div class="case-studies-header">
+    <h1>Case Studies</h1>
+    <p class="intro">
+      Real results from social media campaigns I've managed. From creative development 
+      to pixel configuration, these case studies showcase end-to-end campaign management 
+      for Facebook and Instagram advertising.
+    </p>
+  </div>
+
+  <div class="case-studies-grid">
+    {sortedCaseStudies.map(study => (
+      <article class="case-study-card">
+        <a href={`/case-studies/${study.id}`} class="card-link">
+          <div class="card-logo-section">
+            <div class="logo-container">
+              {study.companyName === "Alerabat" ? (
+                <img src="/case-studies/case-studies-alerabat.png" alt="Alerabat Logo" class="company-logo" />
+              ) : (
+                <span class="company-name">{study.companyName || study.title}</span>
+              )}
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="card-meta">
+              <span class="industry">{study.industry}</span>
+            </div>
+            <h3>{study.title}</h3>
+            <p class="description">{study.shortDescription}</p>
+            <div class="metrics">
+              {study.keyMetrics.map(metric => (
+                <div class="metric">
+                  <span class="metric-value">{metric.value}</span>
+                  <span class="metric-label">{metric.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </a>
+      </article>
+    ))}
+  </div>
+
+
+</Layout>
+
+<style>
+  .case-studies-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .case-studies-header h1 {
+    margin-bottom: 1rem;
+  }
+
+  .intro {
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--flexoki-300);
+    line-height: 1.6;
+  }
+
+  .case-studies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 6rem;
+  }
+
+  .case-study-card {
+    background: var(--flexoki-black);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+  }
+
+  .theme-dark .case-study-card {
+    background: var(--flexoki-950);
+  }
+
+  .card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .card-logo-section {
+    height: 200px;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+  }
+
+  .card-logo-section:hover {
+    background: #2a2a2a;
+  }
+
+  .theme-dark .card-logo-section {
+    background: #0a0a0a;
+    border-bottom-color: var(--flexoki-850);
+  }
+
+  .theme-dark .card-logo-section:hover {
+    background: #1a1a1a;
+  }
+
+  .logo-container {
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .company-name {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    letter-spacing: -0.02em;
+    display: block;
+  }
+
+  .company-logo {
+    max-width: 80%;
+    max-height: 30px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .card-content {
+    padding: 1.5rem;
+  }
+
+  .card-meta {
+    margin-bottom: 1rem;
+  }
+
+  .industry {
+    background: var(--flexoki-50);
+    color: var(--flexoki-700);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--border-radius);
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .theme-dark .industry {
+    background: var(--flexoki-900);
+    color: var(--flexoki-300);
+  }
+
+  .card-content h3 {
+    font-size: 2rem;
+    font-weight: var(--heading-weight);
+    margin-bottom: 0.75rem;
+    margin-top: 0;
+    line-height: 1.3;
+    color: var(--color-tx-normal);
+  }
+
+  .card-link:hover .card-content h3 {
+    color: var(--color-action);
+  }
+
+  .theme-dark .card-link:hover .card-content h3 {
+    color: var(--color-action);
+  }
+
+  .description {
+    color: var(--flexoki-600);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .theme-dark .description {
+    color: var(--flexoki-300);
+  }
+
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--flexoki-100);
+  }
+
+  .theme-dark .metrics {
+    border-top-color: var(--flexoki-900);
+  }
+
+  .metric {
+    text-align: center;
+  }
+
+  .metric-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--flexoki-blue-600);
+    margin-bottom: 0.25rem;
+  }
+
+  .theme-dark .metric-value {
+    color: var(--flexoki-blue-400);
+  }
+
+  .metric-label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--flexoki-600);
+  }
+
+  .theme-dark .metric-label {
+    color: var(--flexoki-500);
+  }
+
+
+
+  @media (max-width: 768px) {
+    .case-studies-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .metrics {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+  }
+</style> 

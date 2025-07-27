@@ -1,0 +1,492 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { caseStudies } from '../../case-studies-data.js';
+
+export async function getStaticPaths() {
+  return caseStudies.map((study) => ({
+    params: { id: study.id }
+  }));
+}
+
+const { id } = Astro.params;
+const study = caseStudies.find(s => s.id === id);
+
+if (!study) {
+  return Astro.redirect('/case-studies');
+}
+---
+
+<Layout title={`${study.title} - Case Study`}>
+  <div class="case-study-detail">
+    <header class="case-header">
+      <a href="/case-studies" class="back-link">← Back to Case Studies</a>
+      <div class="header-content">
+        <div class="header-meta">
+          <span class="industry">{study.industry}</span>
+          <span class="year">{study.year}</span>
+        </div>
+        <h1>{study.title}</h1>
+        <p class="summary">{study.shortDescription}</p>
+      </div>
+    </header>
+
+    <div class="metrics-overview">
+      {study.keyMetrics.map(metric => (
+        <div class="metric-card">
+          <div class="metric-value">{metric.value}</div>
+          <div class="metric-label">{metric.label}</div>
+        </div>
+      ))}
+    </div>
+
+    <main class="case-content">
+      <section class="content-section">
+        <h2>The Challenge</h2>
+        <p>{study.challenge}</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Strategy</h2>
+        <ul class="strategy-list">
+          {study.strategy.map(item => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Video showcase for Alerabat case study */}
+      {study.id === "alerabat" && (
+        <section class="content-section video-section">
+          <h2>Video Ads Created</h2>
+          <p>Here's a showcase of the different video advertisements I created for the Alerabat campaign:</p>
+          <div class="video-container">
+            <video autoplay muted loop class="case-study-video">
+              <source src="/case-studies/case-studies-alerabat-2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </section>
+      )}
+
+      <section class="content-section">
+        <h2>Execution</h2>
+        <ul class="execution-list">
+          {study.execution.map(item => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="content-section results-section">
+        <h2>Results</h2>
+        <div class="results-grid">
+          <div class="result-item">
+            <span class="result-label">Impressions</span>
+            <span class="result-value">{study.results.impressions}</span>
+          </div>
+          {study.results.reach && (
+            <div class="result-item">
+              <span class="result-label">Reach</span>
+              <span class="result-value">{study.results.reach}</span>
+            </div>
+          )}
+          {study.results.conversions && (
+            <div class="result-item">
+              <span class="result-label">Conversions</span>
+              <span class="result-value">{study.results.conversions}</span>
+            </div>
+          )}
+          {study.results.revenue && (
+            <div class="result-item">
+              <span class="result-label">Revenue</span>
+              <span class="result-value">{study.results.revenue}</span>
+            </div>
+          )}
+          {study.results.ctr && (
+            <div class="result-item">
+              <span class="result-label">CTR</span>
+              <span class="result-value">{study.results.ctr}</span>
+            </div>
+          )}
+          {study.results.cpa && (
+            <div class="result-item">
+              <span class="result-label">CPA</span>
+              <span class="result-value">{study.results.cpa}</span>
+            </div>
+          )}
+          {study.results.roas && (
+            <div class="result-item">
+              <span class="result-label">ROAS</span>
+              <span class="result-value">{study.results.roas}</span>
+            </div>
+          )}
+        </div>
+        
+        {study.results.additionalMetrics && (
+          <div class="additional-metrics">
+            <h3>Additional Achievements</h3>
+            <ul>
+              {study.results.additionalMetrics.map(metric => (
+                <li>{metric}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </section>
+
+      {study.testimonial && (
+        <section class="testimonial-section">
+          <blockquote class="testimonial">
+            <p>"{study.testimonial.quote}"</p>
+            <cite>
+              — {study.testimonial.author}
+              {study.testimonial.company && `, ${study.testimonial.company}`}
+            </cite>
+          </blockquote>
+        </section>
+      )}
+    </main>
+
+
+  </div>
+</Layout>
+
+<style>
+  .case-study-detail {
+    max-width: var(--wrap-wide);
+    margin: 0 auto;
+  }
+
+  .case-header {
+    margin-bottom: 3rem;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--flexoki-600);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    transition: color 0.2s ease;
+  }
+
+  .theme-dark .back-link {
+    color: var(--flexoki-500);
+  }
+
+  .back-link:hover {
+    color: var(--color-action);
+  }
+
+  .header-content {
+    text-align: center;
+  }
+
+  .header-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .industry {
+    background: var(--flexoki-50);
+    color: var(--flexoki-700);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--border-radius);
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .theme-dark .industry {
+    background: var(--flexoki-900);
+    color: var(--flexoki-300);
+  }
+
+  .year {
+    color: var(--flexoki-600);
+    font-size: 0.875rem;
+  }
+
+  .theme-dark .year {
+    color: var(--flexoki-500);
+  }
+
+  .case-header h1 {
+    margin: 0 0 1rem 0;
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .summary {
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--flexoki-600);
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+
+  .theme-dark .summary {
+    color: var(--flexoki-300);
+  }
+
+  .metrics-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background: var(--flexoki-50);
+    border-radius: var(--border-radius);
+  }
+
+  .theme-dark .metrics-overview {
+    background: var(--flexoki-950);
+  }
+
+  .metric-card {
+    text-align: center;
+  }
+
+  .metric-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--flexoki-blue-600);
+    margin-bottom: 0.5rem;
+  }
+
+  .theme-dark .metric-value {
+    color: var(--flexoki-blue-400);
+  }
+
+  .metric-label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--flexoki-600);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .theme-dark .metric-label {
+    color: var(--flexoki-500);
+  }
+
+  .case-content {
+    max-width: var(--wrap-normal);
+    margin: 0 auto;
+  }
+
+  .content-section {
+    margin-bottom: 3rem;
+  }
+
+  .content-section h2 {
+    margin-bottom: 1.5rem;
+    color: var(--color-tx-normal);
+  }
+
+  .content-section p {
+    color: var(--flexoki-600);
+    line-height: 1.6;
+  }
+
+  .theme-dark .content-section p {
+    color: var(--flexoki-300);
+  }
+
+  .strategy-list,
+  .execution-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .strategy-list li,
+  .execution-list li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    color: var(--flexoki-600);
+    line-height: 1.6;
+  }
+
+  .theme-dark .strategy-list li,
+  .theme-dark .execution-list li {
+    color: var(--flexoki-300);
+  }
+
+  .strategy-list li::before,
+  .execution-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--flexoki-green-600);
+    font-weight: 600;
+  }
+
+  .theme-dark .strategy-list li::before,
+  .theme-dark .execution-list li::before {
+    color: var(--flexoki-green-400);
+  }
+
+  .results-section {
+    background: var(--flexoki-50);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 3rem;
+  }
+
+  .theme-dark .results-section {
+    background: var(--flexoki-950);
+  }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .result-item {
+    text-align: center;
+  }
+
+  .result-label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--flexoki-600);
+    margin-bottom: 0.5rem;
+  }
+
+  .theme-dark .result-label {
+    color: var(--flexoki-500);
+  }
+
+  .result-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-tx-normal);
+  }
+
+  .additional-metrics h3 {
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+  }
+
+  .additional-metrics ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .additional-metrics li {
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    color: var(--flexoki-600);
+  }
+
+  .theme-dark .additional-metrics li {
+    color: var(--flexoki-300);
+  }
+
+  .additional-metrics li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--flexoki-blue-600);
+  }
+
+  .theme-dark .additional-metrics li::before {
+    color: var(--flexoki-blue-400);
+  }
+
+  .testimonial-section {
+    margin: 4rem 0;
+    text-align: center;
+  }
+
+  .testimonial {
+    background: var(--flexoki-50);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--flexoki-blue-600);
+    margin: 0;
+  }
+
+  .theme-dark .testimonial {
+    background: var(--flexoki-950);
+    border-left-color: var(--flexoki-blue-400);
+  }
+
+  .testimonial p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--color-tx-normal);
+    margin: 0 0 1rem 0;
+    font-style: italic;
+  }
+
+  .testimonial cite {
+    font-style: normal;
+    color: var(--flexoki-600);
+    font-size: 0.875rem;
+  }
+
+  .theme-dark .testimonial cite {
+    color: var(--flexoki-500);
+  }
+
+  /* Video section styles */
+  .video-section {
+    margin: 3rem 0;
+  }
+
+  .video-container {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+
+  .case-study-video {
+    width: 100%;
+    max-width: 800px;
+    min-height: 400px;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    object-fit: contain;
+  }
+
+  .theme-dark .case-study-video {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+
+
+  @media (max-width: 768px) {
+    .case-header h1 {
+      font-size: 2rem;
+    }
+
+    .metrics-overview {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      padding: 1.5rem;
+    }
+
+    .metric-value {
+      font-size: 2rem;
+    }
+
+    .results-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .case-study-video {
+      min-height: 300px;
+    }
+  }
+</style> 
