@@ -26,7 +26,7 @@ if (!study) {
           <span class="year">{study.year}</span>
         </div>
         <h1>{study.title}</h1>
-        <p class="summary">{study.shortDescription}</p>
+        <p class="case-studies-summary">{study.shortDescription}</p>
       </div>
     </header>
 
@@ -75,63 +75,6 @@ if (!study) {
             <li>{item}</li>
           ))}
         </ul>
-      </section>
-
-      <section class="content-section results-section">
-        <h2>Results</h2>
-        <div class="results-grid">
-          <div class="result-item">
-            <span class="result-label">Impressions</span>
-            <span class="result-value">{study.results.impressions}</span>
-          </div>
-          {study.results.reach && (
-            <div class="result-item">
-              <span class="result-label">Reach</span>
-              <span class="result-value">{study.results.reach}</span>
-            </div>
-          )}
-          {study.results.conversions && (
-            <div class="result-item">
-              <span class="result-label">Conversions</span>
-              <span class="result-value">{study.results.conversions}</span>
-            </div>
-          )}
-          {study.results.revenue && (
-            <div class="result-item">
-              <span class="result-label">Revenue</span>
-              <span class="result-value">{study.results.revenue}</span>
-            </div>
-          )}
-          {study.results.ctr && (
-            <div class="result-item">
-              <span class="result-label">CTR</span>
-              <span class="result-value">{study.results.ctr}</span>
-            </div>
-          )}
-          {study.results.cpa && (
-            <div class="result-item">
-              <span class="result-label">CPA</span>
-              <span class="result-value">{study.results.cpa}</span>
-            </div>
-          )}
-          {study.results.roas && (
-            <div class="result-item">
-              <span class="result-label">ROAS</span>
-              <span class="result-value">{study.results.roas}</span>
-            </div>
-          )}
-        </div>
-        
-        {study.results.additionalMetrics && (
-          <div class="additional-metrics">
-            <h3>Additional Achievements</h3>
-            <ul>
-              {study.results.additionalMetrics.map(metric => (
-                <li>{metric}</li>
-              ))}
-            </ul>
-          </div>
-        )}
       </section>
 
       {study.testimonial && (
@@ -219,34 +162,35 @@ if (!study) {
     line-height: 1.2;
   }
 
-  .summary {
-    max-width: 700px;
-    margin: 0 auto;
-    color: var(--flexoki-600);
-    font-size: 1.125rem;
-    line-height: 1.6;
+  .case-studies-summary {
+    line-height: var(--line-height);
+    color: var(--flexoki-300);
+    margin-bottom: 2rem;
   }
 
-  .theme-dark .summary {
+  .theme-dark .case-studies-summary {
     color: var(--flexoki-300);
   }
 
   .metrics-overview {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+    gap: 1rem;
     margin-bottom: 4rem;
-    padding: 2rem;
-    background: var(--flexoki-50);
+    border: 1px solid var(--color-ui-normal);
+    padding: 1.5rem;
     border-radius: var(--border-radius);
+    line-height: 1.3;
   }
 
-  .theme-dark .metrics-overview {
-    background: var(--flexoki-950);
+  .metrics-overview:hover {
+    border-color: var(--color-ui-hover);
   }
 
   .metric-card {
     text-align: center;
+    padding: 1rem;
+    border-radius: var(--border-radius);
   }
 
   .metric-value {
@@ -331,79 +275,6 @@ if (!study) {
     color: var(--flexoki-green-400);
   }
 
-  .results-section {
-    background: var(--flexoki-50);
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    margin-bottom: 3rem;
-  }
-
-  .theme-dark .results-section {
-    background: var(--flexoki-950);
-  }
-
-  .results-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .result-item {
-    text-align: center;
-  }
-
-  .result-label {
-    display: block;
-    font-size: 0.875rem;
-    color: var(--flexoki-600);
-    margin-bottom: 0.5rem;
-  }
-
-  .theme-dark .result-label {
-    color: var(--flexoki-500);
-  }
-
-  .result-value {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--color-tx-normal);
-  }
-
-  .additional-metrics h3 {
-    margin-bottom: 1rem;
-    font-size: 1.125rem;
-  }
-
-  .additional-metrics ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .additional-metrics li {
-    padding-left: 1.5rem;
-    margin-bottom: 0.5rem;
-    position: relative;
-    color: var(--flexoki-600);
-  }
-
-  .theme-dark .additional-metrics li {
-    color: var(--flexoki-300);
-  }
-
-  .additional-metrics li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--flexoki-blue-600);
-  }
-
-  .theme-dark .additional-metrics li::before {
-    color: var(--flexoki-blue-400);
-  }
-
   .testimonial-section {
     margin: 4rem 0;
     text-align: center;
@@ -456,12 +327,7 @@ if (!study) {
     min-height: 400px;
     height: auto;
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     object-fit: contain;
-  }
-
-  .theme-dark .case-study-video {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   }
 
 
@@ -473,16 +339,16 @@ if (!study) {
 
     .metrics-overview {
       grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-      padding: 1.5rem;
+      gap: 0.75rem;
+      padding: 1rem;
+    }
+
+    .metric-card {
+      padding: 0.75rem;
     }
 
     .metric-value {
       font-size: 2rem;
-    }
-
-    .results-grid {
-      grid-template-columns: repeat(2, 1fr);
     }
 
     .case-study-video {
