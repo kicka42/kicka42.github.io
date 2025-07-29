@@ -41,7 +41,7 @@ if (!study) {
 
     <main class="case-content">
       <section class="content-section">
-        <h2>The Challenge</h2>
+        <h2>Challenge</h2>
         <p>{study.challenge}</p>
       </section>
 
@@ -77,8 +77,16 @@ if (!study) {
         </ul>
       </section>
 
+      {study.resultsSummary && (
+        <section class="content-section">
+          <h2>Results</h2>
+          <p>{study.resultsSummary}</p>
+        </section>
+      )}
+
       {study.testimonial && (
         <section class="testimonial-section">
+          <h2>Testimonials</h2>
           <blockquote class="testimonial">
             <p>"{study.testimonial.quote}"</p>
             <cite>
@@ -226,7 +234,8 @@ if (!study) {
     margin-bottom: 3rem;
   }
 
-  .content-section h2 {
+  .content-section h2,
+  .testimonial-section h2 {
     margin-bottom: 1.5rem;
     color: var(--color-tx-normal);
   }
@@ -254,6 +263,7 @@ if (!study) {
     margin-bottom: 1rem;
     color: var(--flexoki-600);
     line-height: 1.6;
+    list-style: none;
   }
 
   .theme-dark .strategy-list li,
@@ -261,36 +271,36 @@ if (!study) {
     color: var(--flexoki-300);
   }
 
-  .strategy-list li::before,
+  .strategy-list li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--flexoki-600);
+    font-weight: 600;
+  }
+
   .execution-list li::before {
     content: "✓";
     position: absolute;
     left: 0;
-    color: var(--flexoki-green-600);
+    color: var(--flexoki-600);
     font-weight: 600;
   }
 
   .theme-dark .strategy-list li::before,
   .theme-dark .execution-list li::before {
-    color: var(--flexoki-green-400);
+    color: var(--flexoki-300);
   }
 
   .testimonial-section {
     margin: 4rem 0;
-    text-align: center;
   }
 
   .testimonial {
-    background: var(--flexoki-50);
     padding: 2rem;
     border-radius: var(--border-radius);
-    border-left: 4px solid var(--flexoki-blue-600);
     margin: 0;
-  }
-
-  .theme-dark .testimonial {
-    background: var(--flexoki-950);
-    border-left-color: var(--flexoki-blue-400);
+    text-align: center;
   }
 
   .testimonial p {
@@ -330,7 +340,61 @@ if (!study) {
     object-fit: contain;
   }
 
+  .results-list, .additional-metrics-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
+  .results-list li, .additional-metrics-list li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    color: var(--flexoki-600);
+    line-height: 1.6;
+  }
+
+  .theme-dark .results-list li, .theme-dark .additional-metrics-list li {
+    color: var(--flexoki-300);
+  }
+
+  .results-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--flexoki-blue-600);
+  }
+
+  .theme-dark .results-list li::before {
+    color: var(--flexoki-blue-400);
+  }
+
+  .results-list li strong {
+    color: var(--color-tx-normal);
+  }
+
+  .additional-metrics-list li::before {
+    content: "+";
+    position: absolute;
+    left: 0;
+    color: var(--flexoki-green-600);
+  }
+
+  .theme-dark .additional-metrics-list li::before {
+    color: var(--flexoki-green-400);
+  }
+
+  .additional-metrics-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-ui-normal);
+  }
+
+  .additional-metrics-title {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--color-tx-normal);
+  }
 
   @media (max-width: 768px) {
     .case-header h1 {

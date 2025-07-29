@@ -38,6 +38,8 @@ export const caseStudies = [
       leads: "451 qualified leads",
       cpm: "$2.47 average CPM",
     },
+    resultsSummary:
+      "The 60-day campaign successfully generated 11,647 app installs at an impressive $0.36 Cost Per Install (CPI). With over 1.7 million impressions and 451 qualified leads, the campaign achieved significant market penetration while maintaining remarkable cost efficiency.",
     testimonial: {
       quote:
         "The results exceeded our expectations for our app launch in Poland. The cost-effective approach and quality of installs helped us establish a strong foundation in the competitive cashback app market.",
@@ -86,6 +88,8 @@ export const caseStudies = [
         "Instagram followers grew by 15K",
       ],
     },
+    resultsSummary:
+      "The summer campaign for the restaurant chain drove an estimated 120,450 store visits, generating €1.8 million in revenue. The campaign also led to a 35% increase in afternoon traffic and a 280% rise in online reservations, successfully boosting both foot traffic and digital engagement during a key sales period.",
   },
   {
     id: "ecommerce-holiday-sales",
@@ -128,6 +132,8 @@ export const caseStudies = [
         "Customer lifetime value increased by 45%",
       ],
     },
+    resultsSummary:
+      "The holiday sales campaign delivered exceptional results, achieving a 420% Return On Ad Spend (ROAS) and generating €2.1 million in revenue from over 15,000 orders. The strategic approach also led to a 25% reduction in cart abandonment and a significant 45% increase in customer lifetime value.",
   },
   {
     id: "fitness-membership-drive",
@@ -170,6 +176,8 @@ export const caseStudies = [
         "Class occupancy increased to 92%",
       ],
     },
+    resultsSummary:
+      "The membership drive successfully converted 852 trial members into annual subscribers, generating over €180,000 in revenue. The campaign achieved a high 68% trial-to-paid conversion rate and an impressive 85% member retention after six months, demonstrating the effectiveness of the community-focused funnel.",
   },
   {
     id: "real-estate-luxury-listings",
@@ -212,5 +220,7 @@ export const caseStudies = [
         "Email open rate for leads: 45%",
       ],
     },
+    resultsSummary:
+      "The campaign for luxury real estate generated 320 highly qualified leads, creating a sales pipeline valued at €12 million. This resulted in 18 closed property deals with an average value of €1.2M each, demonstrating the campaign's ability to attract and convert high-net-worth individuals effectively.",
   },
 ];
