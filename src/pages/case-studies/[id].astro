@@ -46,18 +46,18 @@ if (!study) {
       </section>
 
       <section class="content-section">
-        <h2>Strategy</h2>
-        <ul class="strategy-list">
-          {study.strategy.map(item => (
+        <h2>Approach</h2>
+        <ul class="approach-list">
+          {study.approach.map(item => (
             <li>{item}</li>
           ))}
         </ul>
+        
       </section>
 
       {/* Video showcase for Alerabat case study */}
       {study.id === "alerabat" && (
         <section class="content-section video-section">
-          <h2>Video Ads Created</h2>
           <p>Here's a showcase of the different video advertisements I created for the Alerabat campaign:</p>
           <div class="video-container">
             <video autoplay muted loop class="case-study-video">
@@ -67,15 +67,6 @@ if (!study) {
           </div>
         </section>
       )}
-
-      <section class="content-section">
-        <h2>Execution</h2>
-        <ul class="execution-list">
-          {study.execution.map(item => (
-            <li>{item}</li>
-          ))}
-        </ul>
-      </section>
 
       {study.resultsSummary && (
         <section class="content-section">
@@ -249,15 +240,13 @@ if (!study) {
     color: var(--flexoki-300);
   }
 
-  .strategy-list,
-  .execution-list {
+  .approach-list {
     list-style: none;
     padding: 0;
     margin: 0;
   }
 
-  .strategy-list li,
-  .execution-list li {
+  .approach-list li {
     position: relative;
     padding-left: 2rem;
     margin-bottom: 1rem;
@@ -266,29 +255,19 @@ if (!study) {
     list-style: none;
   }
 
-  .theme-dark .strategy-list li,
-  .theme-dark .execution-list li {
+  .theme-dark .approach-list li {
     color: var(--flexoki-300);
   }
 
-  .strategy-list li::before {
-    content: "–";
+  .approach-list li::before {
+    content: "→";
     position: absolute;
     left: 0;
     color: var(--flexoki-600);
     font-weight: 600;
   }
 
-  .execution-list li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--flexoki-600);
-    font-weight: 600;
-  }
-
-  .theme-dark .strategy-list li::before,
-  .theme-dark .execution-list li::before {
+  .theme-dark .approach-list li::before {
     color: var(--flexoki-300);
   }
 
@@ -319,6 +298,68 @@ if (!study) {
 
   .theme-dark .testimonial cite {
     color: var(--flexoki-500);
+  }
+
+  /* Campaign diagram styles */
+  .campaign-diagram {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border: 1px solid var(--color-ui-normal);
+    border-radius: var(--border-radius);
+    background: var(--flexoki-50);
+  }
+
+  .theme-dark .campaign-diagram {
+    background: var(--flexoki-black);
+  }
+
+  .campaign-diagram h3 {
+    margin: 0 0 1rem 0;
+    color: var(--color-tx-normal);
+    font-size: 1.25rem;
+  }
+
+  .campaign-diagram .mermaid {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: var(--flexoki-700);
+    overflow-x: auto;
+  }
+
+  .theme-dark .campaign-diagram .mermaid {
+    color: var(--flexoki-300);
+  }
+
+  /* Force dark background on mermaid SVG */
+  .campaign-diagram .mermaid svg {
+    background-color: var(--flexoki-black) !important;
+  }
+
+  .theme-dark .campaign-diagram .mermaid svg {
+    background-color: var(--flexoki-black) !important;
+  }
+
+  /* SVG diagram styles */
+  .svg-diagram {
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+  .svg-diagram img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-ui-normal);
+  }
+
+  .svg-diagram img:hover {
+    border-color: var(--color-ui-hover);
   }
 
   /* Video section styles */
