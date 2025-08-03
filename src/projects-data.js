@@ -33,7 +33,7 @@ export const projects = [
     fullDescription:
       "Written and directed by Ira Nirsha with producer Malwina Kajetańczyk, the performance brought together an international creative team.\n\nI handled the multimedia installation, orchestrating a setup of projectors, TVs, and cameras to create live video effects that enhanced the mysterious underwater atmosphere. The tech setup was crucial in bringing the submerged hotel concept to life, creating immersive visuals that complemented the live performance.\n\nDuring rehearsals, I also grabbed my old Sony camcorder and filmed our process. The result is a [raw, behind-the-scenes video](https://drive.google.com/file/d/1Q_mJ6Nx_1yf6ImGPZPxILOmD_g5lBfVR/view?usp=sharing) that captures the energy of our collaboration.\n\nThe performance ran for three nights, creating an intimate and mysterious experience. You can also check out [photos and videos](https://photos.app.goo.gl/81GSWNBizYiLCuRY8) from the performance to see how the underwater hotel concept came to life.",
     image: "/hotel-meduza.png",
-    visible: true,
+    visible: false,
   },
   {
     id: "rust-riders",
